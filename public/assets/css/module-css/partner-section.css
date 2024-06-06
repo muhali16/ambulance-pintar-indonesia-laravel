@@ -1,0 +1,88 @@
+/*** 
+=============================================
+    Partner Area Css
+=============================================
+***/
+.partner-area {
+  position: relative;
+  display: block;
+  background: #ffffff;
+  padding-bottom: 120px;
+  z-index: 10;
+}
+
+.partner-area.pdtop120 {
+  padding-top: 120px;
+}
+
+.brand-content {
+  position: relative;
+  display: block;
+}
+
+.brand-content .inner {
+  position: relative;
+  display: block;
+}
+
+.partner-box {
+  position: relative;
+  display: block;
+}
+
+.partner-box li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-partner-logo-box {
+  position: relative;
+  display: block;
+  text-align: center;
+  border: 1px dashed rgba(var(--thm-primary-rgb), 0.3);
+  z-index: 1;
+}
+
+.single-partner-logo-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px dashed rgba(var(--thm-primary-rgb), 0.8);
+  transform: perspective(400px) scaleX(0);
+  transform-origin: center;
+  transition: all 500ms linear;
+  transition-delay: 0.5s;
+  z-index: -1;
+}
+
+.single-partner-logo-box:hover:before {
+  transform: perspective(400px) scaleX(1);
+}
+
+.single-partner-logo-box a {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.single-partner-logo-box a img {
+  opacity: 1;
+  width: auto;
+  height: 3rem;
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+.single-partner-logo-box:hover a img {
+  opacity: 1;
+  transition: all 0.8s ease-in-out 0.1s;
+}
+
+.partner-carousel.owl-carousel.owl-dot-style1 .owl-dots {
+  display: none;
+}

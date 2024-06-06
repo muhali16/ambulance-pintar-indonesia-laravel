@@ -1,0 +1,14 @@
+{
+  "name": "Ambulance Pintar Indonesia",
+  "short_name": "API",
+  "icons": [
+    {
+      "src": "/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#990000",
+  "background_color": "#990000",
+  "display": "standalone"
+}
