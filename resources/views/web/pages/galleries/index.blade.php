@@ -7,7 +7,7 @@
         <div
             class="breadcrumb-area-bg"
             style="
-            background-image: url(assets/images/breadcrumb/breadcrumb-1.jpg);
+            background-image: url({{asset('assets/images/breadcrumb/breadcrumb-2.jpg')}});
           "
         ></div>
         <div class="container">
@@ -33,87 +33,21 @@
     <section class="blog-page-two">
         <div class="container">
             <div class="row">
+                @forelse($photos as $photo)
                 <!-- Start Single Image Gallery -->
                 <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
+                    class="service-details__content p-2 m-0 col-xl-6 col-lg-6 col-md-6"
                 >
                     <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
+                        <img src="{{asset('storage/' . $photo->content)}}" alt="{{$photo->caption}}" title="{{$photo->caption}}" />
                     </div>
                 </div>
                 <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
+                @empty
+                    <div class="row container pt-5" style="min-height: 100%">
+                        <h3 style="width: 100%" class="text-secondary text-center">Belum Ada Foto Galeri</h3>
                     </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
-                <!-- Start Single Image Gallery -->
-                <div
-                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
-                >
-                    <div class="img-box1">
-                        <img src="assets/images/services/produk.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- End Single Image Gallery -->
+                @endforelse
             </div>
         </div>
     </section>

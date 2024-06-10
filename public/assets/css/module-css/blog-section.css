@@ -1,4 +1,4 @@
-/*** 
+/***
 =============================================
     Blog Style1 Area Css
 =============================================
@@ -145,7 +145,7 @@
   color: var(--thm-base);
 }
 
-/*** 
+/***
 =============================================
     Blog Page One Css
 =============================================
@@ -158,7 +158,7 @@
   z-index: 10;
 }
 
-/*** 
+/***
 =============================================
     Blog Page Two Css
 =============================================
@@ -167,7 +167,7 @@
   position: relative;
   display: block;
   background: #ffffff;
-  padding: 120px 0 120px;
+  padding: 70px 0 120px;
   z-index: 10;
 }
 
@@ -208,7 +208,7 @@
   color: #ffffff;
 }
 
-/*** 
+/***
 =============================================
     Blog Page Three Css
 =============================================
@@ -341,7 +341,7 @@
   color: #ffffff;
 }
 
-/*** 
+/***
 =============================================
     Sidebar Css
 =============================================
@@ -358,7 +358,6 @@
   display: block;
   padding: 50px 50px 50px;
   background-color: rgba(var(--thm-primary-rgb), 0.05);
-  margin-top: 30px;
 }
 
 .sidebar-search-box {
@@ -366,6 +365,7 @@
   display: block;
   background: var(--thm-primary);
   padding: 20px 30px;
+    z-index: 10;
 }
 
 .sidebar-search-box form.search-form {
@@ -382,7 +382,7 @@
   height: 50px;
   background-color: #ffffff;
   border: 1px solid transparent;
-  color: #ffffff;
+  color: var(--thm-primary);
   font-size: 16px;
   font-weight: 500;
   padding-left: 20px;
@@ -421,23 +421,23 @@
 
 .sidebar-search-box .search-form input[type="text"]:focus + button,
 .sidebar-search-box .search-form button:hover {
-  color: #fff;
+  color: #797989;
 }
 
 .sidebar-search-box .search-form input::-webkit-input-placeholder {
-  color: var(--thm-primary);
+    color: #797989;
 }
 
 .sidebar-search-box .search-form input:-moz-placeholder {
-  color: var(--thm-primary);
+  color: #797989;
 }
 
 .sidebar-search-box .search-form input::-moz-placeholder {
-  color: var(--thm-primary);
+  color: #797989;
 }
 
 .sidebar-search-box .search-form input:-ms-input-placeholder {
-  color: var(--thm-primary);
+  color: #797989;
 }
 
 .sidebar-title {
@@ -685,7 +685,7 @@
   background-color: var(--thm-base);
 }
 
-/*** 
+/***
 =============================================
     Blog Details Css
 =============================================
@@ -845,6 +845,7 @@
 
 .blog-details-author .inner-box .img-box {
   width: 170px;
+  height: 170px;
 }
 
 .blog-details-author .inner-box .img-box img {
@@ -1069,7 +1070,7 @@
   padding-right: 50px;
 }
 
-/*** 
+/***
 =============================================
     Blog Style2 Area Css
 =============================================

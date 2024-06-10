@@ -46,11 +46,11 @@ class ProductAmbulanceController extends Controller
      * @param  \App\Models\ProductAmbulance  $productAmbulance
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductAmbulance $productAmbulance)
+    public function show(string $productAmbulance)
     {
-//        return view("web.pages.products.show", [
-//            'title' => 'Ambulance Suzuki | Ambulance Pintar Indonesia'
-//        ]);
+        return view("web.pages.products.show", [
+            'title' => 'Ambulance Suzuki | Ambulance Pintar Indonesia'
+        ]);
     }
 
     /**

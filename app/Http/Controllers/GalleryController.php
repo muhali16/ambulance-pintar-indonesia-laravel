@@ -15,7 +15,8 @@ class GalleryController extends Controller
     public function index()
     {
         return view("web.pages.galleries.index", [
-            'title' => "Galeri | Ambulance Pintar Indonesia"
+            'title' => "Galeri | Ambulance Pintar Indonesia",
+            'photos' => Gallery::latest()->get(),
         ]);
     }
 

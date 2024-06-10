@@ -1257,6 +1257,13 @@ li {
     animation-delay: 1.5s;
 }
 
+.handle-preloader
+.animation-preloader
+.txt-loading
+.letters-loading:nth-child(9):before {
+    animation-delay: 1.7s;
+}
+
 /**
 animation: spinner 1s infinite linear;
 

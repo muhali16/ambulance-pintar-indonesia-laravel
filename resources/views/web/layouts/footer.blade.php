@@ -167,29 +167,37 @@
                     <div class="header-social-link">
                         <ul class="clearfix">
                             <li>
-                                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="mailto:azmbkhry@gmail.com" title="Email"
+                                ><i class="fa-solid fa-envelope"></i
+                                    ></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+                                <a href="tel:+6285893210906" title="Telepon"
+                                ><i class="fa-solid fa-phone-volume"></i
+                                    ></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="https://wa.me/6285173110904" title="WhatsApp"
+                                ><i class="fa-brands fa-whatsapp"></i
+                                    ></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                                ><i class="fa-brands fa-facebook"></i
+                                    ></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <div class="copyright">
+                    <div class="copyright my-2">
                         <p>
                             Copyright &copy; 2024
-                            <a href="index.html">PT Ambulance Pintar Indonesia</a> All
+                            <a href="/">PT Ambulance Pintar Indonesia</a> All
                             Rights Reserved.
                         </p>
                     </div>

@@ -1,4 +1,4 @@
-/*** 
+/***
 =============================================
     Breadcrumb area style
 =============================================
@@ -19,7 +19,7 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1;
+    z-index: 10;
 }
 
 .breadcrumb-area-bg:before {
@@ -37,7 +37,7 @@
 .breadcrumb-area .inner-content {
     position: relative;
     display: block;
-    padding: 202px 0 150px;
+    padding: 150px 0 150px;
     text-align: center;
     z-index: 10;
 }

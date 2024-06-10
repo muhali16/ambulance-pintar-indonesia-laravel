@@ -9,7 +9,7 @@
                         <a href="index.html">
                             <img
                                 style="width: 16rem"
-                                src="assets/images/resources/logo.png"
+                                src="{{asset('assets/images/resources/logo.png')}}"
                                 alt="Logo perusahaan"
                                 title="PT Ambulance Pintar Indonesia"
                             />
@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Telepon</p>
-                                    <h5><a href="tel:#">+ 1- (246) 333-0089</a></h5>
+                                    <h5><a href="tel:+6285893210906">+62 858 9321 0906</a></h5>
                                 </div>
                             </li>
                             <li>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="text">
                                     <p>WhatsApp</p>
-                                    <h5><a href="#">+ 1- (246) 333-0089</a></h5>
+                                    <h5><a href="https://wa.me/6285173110904">+62 851 7311 0904</a></h5>
                                 </div>
                             </li>
                             <li>
@@ -45,17 +45,12 @@
                                 <div class="text">
                                     <p>Email</p>
                                     <h5>
-                                        <a href="mailto:#">needhelp@company.com</a>
+                                        <a href="mailto:azmbkhry@gmail.com">azmbkhry@gmail.com</a>
                                     </h5>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <!-- <div class="header-button-style1">
-                      <a class="btn-one" href="contact.html">
-                        <span class="txt">Get a Free Quote</span>
-                      </a>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -115,16 +110,16 @@
                     <div class="header-social-link">
                         <ul class="clearfix">
                             <li>
-                                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="https://wa.me/6285173110904"><i class="fa-brands fa-whatsapp"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61550623351891"><i class="fa-brands fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -144,7 +139,7 @@
                     <a href="/" class="img-responsive">
                         <img
                             style="width: 16rem"
-                            src="assets/images/resources/sticky-logo.png"
+                            src="{{asset('assets/images/resources/sticky-logo.png')}}"
                             alt="Logo perusahaan"
                             title="PT Ambulance Pintar Indonesia"
                         />
@@ -170,9 +165,9 @@
         </div>
         <nav class="menu-box">
             <div class="nav-logo">
-                <a href="index.html"
+                <a href="/"
                 ><img
-                        src="assets/images/resources/logo.png"
+                        src="{{asset('assets/images/resources/logo.png')}}"
                         alt="Logo perusahaan"
                         title="PT Ambulance Pintar Indonesia"
                     /></a>
@@ -184,29 +179,30 @@
             <div class="social-links">
                 <ul class="clearfix">
                     <li>
-                        <a href="#"
-                        ><span class="fa-brands fa-facebook-square"></span
+                        <a href="mailto:azmbkhry@gmail.com" title="Email"
+                        ><i class="fa-solid fa-envelope"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="#"
-                        ><span class="fa-brands fa-twitter-square"></span
+                        <a href="tel:+6285893210906" title="Telepon"
+                        ><i class="fa-solid fa-phone-volume"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="#"
-                        ><span class="fa-brands fa-pinterest-square"></span
+                        <a href="https://wa.me/6285173110904" title="WhatsApp"
+                        ><i class="fa-brands fa-whatsapp"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="#"
-                        ><span class="fa-brands fa-google-plus-square"></span
+                        <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                        ><i class="fa-brands fa-facebook"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="#"
-                        ><span class="fa-brands fa-youtube-square"></span
-                            ></a>
+                        <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
                     </li>
                 </ul>
             </div>

@@ -19,9 +19,9 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h2><a href="tel:123456789">+ 1 (246) 333-0088</a></h2>
+                        <h2><a href="https://wa.me/6285173110904">+62 851 7311 0904</a></h2>
                         <p>
-                            Butuh konsultasi? Hubungi Kami<br/>
+                            Butuh konsultasi? Hubungi Kami<br />
                             <!-- untuk konsultasi ambulans yang sesuai dengan kebutuhan anda. -->
                         </p>
                     </div>
@@ -34,8 +34,13 @@
                     <div
                         class="image-layer"
                         style="
-                  background-image: url(assets/images/resources/slide-content.png);
-                "
+                            width: 1920px;
+                            height: 800px;
+                            background-image: url({{asset('assets/images/slides/content-1.jpg')}});
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        "
                     ></div>
                     <div class="auto-container">
                         <div class="content">
@@ -46,48 +51,14 @@
                             </div>
                             <div class="big-title">
                                 <h2>
-                                    Ambulans yang Siap Beraksi:
-                                    <br/>
-                                    Kualitas, Kustomisasi, dan Keandalan
+                                    Ambulans yang Siap Beraksi: Kualitas, Kustomisasi, dan Keandalan
                                 </h2>
                             </div>
                             <div class="btns-box">
                                 <a class="btn-one" href="about.html">
-                      <span class="txt">
-                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide -->
-                <div class="slide">
-                    <div
-                        class="image-layer"
-                        style="
-                  background-image: url(assets/images/resources/slide-content-2.png);
-                "
-                    ></div>
-                    <div class="auto-container">
-                        <div class="content">
-                            <div class="sub-title">
-                                <h3>
-                                    Kualitas, Ketepatan, dan Kepuasan Adalah Prioritas Kami.
-                                </h3>
-                            </div>
-                            <div class="big-title">
-                                <h2>
-                                    Dari Desain hingga Tugas<br/>
-                                    Ambulans Unggul untuk Setiap Misi Penyelamatan
-                                </h2>
-                            </div>
-                            <div class="btns-box">
-                                <a class="btn-one" href="about.html">
-                      <span class="txt">
-                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
-                      </span>
+                                    <span class="txt">
+                                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -98,8 +69,13 @@
                     <div
                         class="image-layer"
                         style="
-                  background-image: url(assets/images/resources/slide-content.png);
-                "
+                            width: 1920px;
+                            height: 800px;
+                            background-image: url({{asset('assets/images/slides/content-2.jpg')}});
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        "
                     ></div>
                     <div class="auto-container">
                         <div class="content">
@@ -110,15 +86,14 @@
                             </div>
                             <div class="big-title">
                                 <h2>
-                                    Rancangan Handal, Penyelamatan Maksimal<br/>
-                                    Layanan Ambulans Unggulan
+                                    Ambulans yang Siap Beraksi: Kualitas, Kustomisasi, dan Keandalan
                                 </h2>
                             </div>
                             <div class="btns-box">
                                 <a class="btn-one" href="about.html">
-                      <span class="txt">
-                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
-                      </span>
+                                    <span class="txt">
+                                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -207,7 +182,7 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
@@ -229,7 +204,7 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
@@ -251,7 +226,7 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
@@ -273,7 +248,7 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
@@ -295,7 +270,7 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
@@ -317,7 +292,7 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
@@ -352,7 +327,7 @@
             data-wow-delay="400ms"
             data-wow-duration="3500ms"
         >
-            <img class="zoom-fade" src="assets/images/shape/shape-1.png" alt=""/>
+            <img class="zoom-fade" src="assets/images/shape/shape-1.png" alt="" />
         </div>
         <div class="container">
             <div class="row">
@@ -391,7 +366,7 @@
                                     />
                                     <div class="overlay-content">
                                         <div class="quote-icon">
-                                            <img src="assets/images/icon/quote.png" alt=""/>
+                                            <img src="assets/images/icon/quote.png" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -429,7 +404,7 @@
                                     />
                                     <div class="overlay-content">
                                         <div class="quote-icon">
-                                            <img src="assets/images/icon/quote.png" alt=""/>
+                                            <img src="assets/images/icon/quote.png" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -479,7 +454,7 @@
                                 <h3>Benefit</h3>
                             </div>
                             <h2>
-                                Apa yang anda<br/>
+                                Apa yang anda<br />
                                 dapatkan dari kami?
                             </h2>
                         </div>
@@ -508,7 +483,7 @@
                             <div class="text-holder">
                                 <h3>
                                     <a href="#"
-                                    >Produk<br/>
+                                    >Produk<br />
                                         Terbaik</a
                                     >
                                 </h3>
@@ -547,7 +522,7 @@
                             <div class="text-holder">
                                 <h3>
                                     <a href="#"
-                                    >Bedside to<br/>
+                                    >Bedside to<br />
                                         Bedside Care</a
                                     >
                                 </h3>
@@ -636,7 +611,7 @@
             data-wow-delay="1400ms"
             data-wow-duration="5500ms"
         >
-            <img class="float-bob" src="assets/images/shape/map.png" alt=""/>
+            <img class="float-bob" src="assets/images/shape/map.png" alt="" />
         </div>
         <div class="container">
             <div class="row">
@@ -658,7 +633,7 @@
                 <div class="col-xl-5 col-lg-12">
                     <div class="slogan-text-box">
                         <h2>
-                            Tertarik lebih dalam dengan <br/>
+                            Tertarik lebih dalam dengan <br />
                             ambulans kami?
                         </h2>
                         <div class="slogan-btn-box mt-3">
@@ -667,9 +642,9 @@
                             </a>
                         </div>
                         <h4>
-                            Atau hubungi kami <br/>
-                            <br/>
-                            <a href="#">+ 1- (246) 333-0089</a>
+                            Atau hubungi kami <br />
+                            <br />
+                            <a href="#">085893210906</a>
                         </h4>
                     </div>
                 </div>
@@ -750,7 +725,7 @@
                         data-aos-duration="1000"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <div class="meta-info">
@@ -784,7 +759,7 @@
                         data-aos-duration="1000"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <div class="meta-info">
@@ -818,7 +793,7 @@
                         data-aos-duration="1000"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt=""/>
+                            <img src="assets/images/services/produk.jpg" alt="" />
                         </div>
                         <div class="text-holder">
                             <div class="meta-info">
@@ -870,13 +845,24 @@
                 <div class="col-xl-12">
                     <div class="video-gallery-style1__content">
                         <h2>
-                            Kami Menyediakan Produk Terbaik,<br/>
+                            Kerja Sama API X BAZNAS YOUTUBE,<br />
                             Lihat Lebih Dekat.
                         </h2>
                         <iframe
                             class="mt-3"
                             style="width: 100%; height: 30rem"
-                            src="https://www.youtube.com/embed/Xg8KYwl_2eU?si=MhPGqSbykrFmof_g&amp;controls=0"
+                            src="https://www.youtube.com/embed/Qu6jI9auRJQ?si=MhPGqSbykrFmof_g&amp;controls=0"
+                            title="Company Profile PT Ambulance Pintar Indonesia"
+                            frameborder="1"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <br>
+                        <iframe
+                            class="mt-3"
+                            style="width: 100%; height: 30rem"
+                            src="https://www.youtube.com/embed/elIjp0YQjsk?si=MhPGqSbykrFmof_g&amp;controls=0"
                             title="Company Profile PT Ambulance Pintar Indonesia"
                             frameborder="1"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -917,7 +903,7 @@
                                 <h3>Tentang Kami</h3>
                             </div>
                             <h2 class="notranslate">
-                                PT Ambulance Pintar <br/>Indonesia
+                                PT Ambulance Pintar <br />Indonesia
                             </h2>
                         </div>
                         <div class="inner-content">
@@ -926,40 +912,36 @@
                             </div>
                             <h3>Alamat Utama</h3>
                             <p>
-                                Griya Asri Bahagia, Blok E2 No. 13, <br/>
+                                Griya Asri Bahagia, Blok E2 No. 13, <br />
                                 Kel. Bahagia, Kec. Babelan, Bekasi 17610
                             </p>
                             <div class="header-social-link">
                                 <ul class="clearfix">
                                     <li>
-                                        <a href="#" title="Email"
+                                        <a href="mailto:azmbkhry@gmail.com" title="Email"
                                         ><i class="fa-solid fa-envelope"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="#" title="Telepon"
+                                        <a href="tel:+6285893210906" title="Telepon"
                                         ><i class="fa-solid fa-phone-volume"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="#" title="WhatsApp"
+                                        <a href="https://wa.me/6285173110904" title="WhatsApp"
                                         ><i class="fa-brands fa-whatsapp"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="#" title="Facebook"
+                                        <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
                                         ><i class="fa-brands fa-facebook"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="#" title="X"
-                                        ><i class="fa-brands fa-x-twitter"></i
-                                            ></a>
+                                        <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" title="Youtube"
-                                        ><i class="fa-brands fa-youtube"></i
-                                            ></a>
+                                        <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -971,7 +953,7 @@
                     <div class="features-style4__image-box">
                         <div class="top-text text-center">
                             <h3>
-                                Kami Menjamin Pelanggan Mendapat <br/>
+                                Kami Menjamin Pelanggan Mendapat <br />
                                 Standar Kualitas Tinggi
                             </h3>
                         </div>
@@ -1018,40 +1000,36 @@
                                 <div class="acc-content">
                                     <h3>Alamat</h3>
                                     <p>
-                                        Griya Asri Bahagia, Blok E2 No. 13, <br/>
+                                        Griya Asri Bahagia, Blok E2 No. 13, <br />
                                         Kel. Bahagia, Kec. Babelan, Bekasi 17610
                                     </p>
                                     <div class="header-social-link">
                                         <ul class="clearfix">
                                             <li>
-                                                <a href="#" title="Email"
+                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
                                                 ><i class="fa-solid fa-envelope"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Telepon"
+                                                <a href="tel:+6285893210906" title="Telepon"
                                                 ><i class="fa-solid fa-phone-volume"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="WhatsApp"
+                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
                                                 ><i class="fa-brands fa-whatsapp"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Facebook"
+                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
                                                 ><i class="fa-brands fa-facebook"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="X"
-                                                ><i class="fa-brands fa-x-twitter"></i
-                                                    ></a>
+                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Youtube"
-                                                ><i class="fa-brands fa-youtube"></i
-                                                    ></a>
+                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1073,51 +1051,211 @@
                                     <div class="icon-outer">
                                         <i class="flaticon-down-arrow-2"></i>
                                     </div>
-                                    <h3>Cikarang</h3>
+                                    <h3>Padang</h3>
                                 </div>
                                 <div class="acc-content">
                                     <h3>Alamat</h3>
                                     <p>
-                                        Griya Asri Bahagia, Blok E2 No. 13, <br/>
-                                        Kel. Bahagia, Kec. Babelan, Bekasi 17610
+                                        675R+3M3, Katapiang, Kec. Batang Anai, Kabupaten Padang Pariaman, Sumatera Barat 25586 <br />
                                     </p>
                                     <div class="header-social-link">
                                         <ul class="clearfix">
                                             <li>
-                                                <a href="#" title="Email"
+                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
                                                 ><i class="fa-solid fa-envelope"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Telepon"
+                                                <a href="tel:+6285893210906" title="Telepon"
                                                 ><i class="fa-solid fa-phone-volume"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="WhatsApp"
+                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
                                                 ><i class="fa-brands fa-whatsapp"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Facebook"
+                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
                                                 ><i class="fa-brands fa-facebook"></i
                                                     ></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="X"
-                                                ><i class="fa-brands fa-x-twitter"></i
-                                                    ></a>
+                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Youtube"
-                                                ><i class="fa-brands fa-youtube"></i
-                                                    ></a>
+                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="inner-img-box mt-3">
                                         <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.679339706034!2d107.02192737407803!3d-6.1736683604957445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69894a3b26f3c9%3A0xd1041d4cde894037!2sPT.%20Ambulance%20Pintar%20Indonesia%20Official%20%2F%2F%20Jual%20Mobil%20Ambulance%20Ready%20Stock!5e0!3m2!1sid!2sid!4v1716826627078!5m2!1sid!2sid"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.4367909751436!2d100.2916654!3d-0.7923709000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4c3c50614fa51%3A0xcba985f1b8506ba7!2sWORKSHOP%20KAROSERI%20AMBULANCE%20PT.%20ANDALAS%20PROSPEK%20INDONESIA!5e0!3m2!1sid!2sid!4v1717695285418!5m2!1sid!2sid"
+                                            width="100%"
+                                            height="200"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>Semarang</h3>
+                                </div>
+                                <div class="acc-content">
+                                    <h3>Alamat</h3>
+                                    <p>
+                                        Jl. Wonodri Baru Raya No.7, Wonodri, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50242 <br />
+                                    </p>
+                                    <div class="header-social-link">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
+                                                ><i class="fa-solid fa-envelope"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="tel:+6285893210906" title="Telepon"
+                                                ><i class="fa-solid fa-phone-volume"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
+                                                ><i class="fa-brands fa-whatsapp"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                                                ><i class="fa-brands fa-facebook"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="inner-img-box mt-3">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0611838994296!2d110.430887!3d-7.0020777999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d00415b0b3d%3A0x1af91bb4f40d7c8e!2sPT.%20Asia%20Persada%20Indonesia!5e0!3m2!1sid!2sid!4v1717695404398!5m2!1sid!2sid"
+                                            width="100%"
+                                            height="200"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>Gresik</h3>
+                                </div>
+                                <div class="acc-content">
+                                    <h3>Alamat</h3>
+                                    <p>
+                                        Jl. Raya Boboh, Gantang, Boboh, Kec. Menganti, Kabupaten Gresik, Jawa Timur 61174 <br />
+                                    </p>
+                                    <div class="header-social-link">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
+                                                ><i class="fa-solid fa-envelope"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="tel:+6285893210906" title="Telepon"
+                                                ><i class="fa-solid fa-phone-volume"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
+                                                ><i class="fa-brands fa-whatsapp"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                                                ><i class="fa-brands fa-facebook"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="inner-img-box mt-3">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.9121283960317!2d112.56851429999999!3d-7.250841299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78014de06e8fcf%3A0x189f08bd0848a6a7!2sPT.%20Ambulance%20Pintar%20Indonesia%20cabang%20ke-4%2C%20Gresik!5e0!3m2!1sid!2sid!4v1717695473614!5m2!1sid!2sid"
+                                            width="100%"
+                                            height="200"
+                                            style="border: 0"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>Makassar</h3>
+                                </div>
+                                <div class="acc-content">
+                                    <h3>Alamat</h3>
+                                    <p>
+                                        Jl. Abdul Rasyid Dg. Lurang No.25-33, Tombolo, Kec. Somba Opu, Kabupaten Gowa, Sulawesi Selatan 92113 <br />
+                                    </p>
+                                    <div class="header-social-link">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
+                                                ><i class="fa-solid fa-envelope"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="tel:+6285893210906" title="Telepon"
+                                                ><i class="fa-solid fa-phone-volume"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
+                                                ><i class="fa-brands fa-whatsapp"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                                                ><i class="fa-brands fa-facebook"></i
+                                                    ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="inner-img-box mt-3">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.4154518431797!2d119.46375889999997!3d-5.197205299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee3007b6067eb%3A0x98ffe7ab5b615bf2!2sAPI%20GROUP%20Makassar!5e0!3m2!1sid!2sid!4v1717695521445!5m2!1sid!2sid"
                                             width="100%"
                                             height="200"
                                             style="border: 0"

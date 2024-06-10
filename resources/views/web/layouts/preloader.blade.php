@@ -12,7 +12,8 @@
                     <span data-text-preloader="L" class="letters-loading"> L </span>
                     <span data-text-preloader="A" class="letters-loading"> A </span>
                     <span data-text-preloader="N" class="letters-loading"> N </span>
-                    <span data-text-preloader="S" class="letters-loading"> S </span>
+                    <span data-text-preloader="C" class="letters-loading"> C </span>
+                    <span data-text-preloader="E" class="letters-loading"> E </span>
                 </div>
                 <h1 class="text-center text-white">PINTAR INDONESIA</h1>
             </div>
