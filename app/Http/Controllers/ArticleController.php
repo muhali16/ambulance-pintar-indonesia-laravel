@@ -15,16 +15,15 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latestArticles()->filter()->paginate(9)->withQueryString();
-//        if (isset(request()->category)) {
-//            $articles = Article::latestArticles()->whereHas('category', function ($query) {
-//                $query->where('id', request()->category);
-//            })->paginate(9);
-//        }
-        return view("web.pages.articles.index", [
+        $data = [
             'title' => 'Articles | Ambulance Pintar Indonesia',
-            'articles' => $articles,
-        ]);
+        ];
+        $data['articles'] = Article::latestArticles()->filter()->paginate(9)->withQueryString();
+        if(isset(\request()->category)) {
+            $data['category'] = Category::find(\request()->category);
+        }
+
+        return view("web.pages.articles.index", $data);
     }
 
     /**

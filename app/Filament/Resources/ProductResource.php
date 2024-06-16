@@ -30,6 +30,7 @@ class ProductResource extends Resource
                 Forms\Components\Toggle::make('is_publish')->label('Apakah anda ingin publish produk?')->inline(false)->required(),
                 Forms\Components\Select::make('product_category_id')->name('product_category_id')->label('Pilih Kategori Produk')->required()->options(ProductCategory::all()->pluck('name', 'id'))->searchable(),
                 Forms\Components\TextInput::make('name')->label('Nama Produk')->required()->minLength(2)->maxLength(255),
+                Forms\Components\Textarea::make('caption')->label('Deskripsi Singkat Produk')->required()->minLength(2)->maxLength(255),
                 Forms\Components\FileUpload::make("photo")->label('Masukan Foto Produk')->image()->disk('public')->directory('product-photo')->required()->enableOpen(),
                 Forms\Components\Toggle::make('is_use_product_specification')->label('Gunakan spesifikasi yang sudah ada?')->onColor('success')->offColor('warning')->required()->inline(false)->reactive(),
                 Forms\Components\CheckboxList::make('product_specification_id')->label('Pilih spesifikasi ambulance')->options(ProductSpecification::all()->pluck('name', 'id'))->hidden(fn (\Closure $get) => $get('is_use_product_specification') == false)->columns(4),
@@ -47,9 +48,10 @@ class ProductResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('productCategory.name')->sortable()->searchable(),
-                Tables\Columns\ImageColumn::make('photo'),
+                Tables\Columns\TextColumn::make('views')->sortable(),
                 Tables\Columns\IconColumn::make('is_publish')->label('Pusblish')->boolean()->trueIcon('heroicon-o-badge-check')->falseIcon('heroicon-o-x-circle'),
                 Tables\Columns\TextColumn::make('created_at')->since()->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')->since()->sortable(),
             ])
             ->filters([
                 //

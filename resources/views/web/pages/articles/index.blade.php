@@ -5,8 +5,8 @@
 
     @if(!is_null($articles))
     <!-- Search Box Section -->
-    <div class="sidebar-search-box" style="padding-top: 6rem; position: relative; display: block">
-        <form class="search-form container" action="" method="get"">
+    <div class="sidebar-search-box">
+        <form class="search-form container" action="{{route('web.search')}}" method="get">
             <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ""}}" type="text" />
             <button type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -53,7 +53,7 @@
     <!--Start Blog Page Two-->
     <section class="blog-page-two">
         <div class="container" style="min-height: 100%">
-            @if(isset(request()->category)) <h2 class="mb-5">Category: {{$articles[0]->category->name}}</h2> @endif
+            @if(isset(request()->category)) <h2 class="mb-5">Category: {{$category->name}}</h2> @endif
             <div class="row">
                 @forelse($articles as $article)
                 <!--Start Single Blog Style1-->

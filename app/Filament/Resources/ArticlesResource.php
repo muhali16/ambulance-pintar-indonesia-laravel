@@ -36,7 +36,7 @@ class ArticlesResource extends Resource
                 }),
                 Forms\Components\TextInput::make('slug')->name('slug')->required(),
                 Forms\Components\FileUpload::make("thumbnail")->name('thumbnail')->image()->disk('public')->directory('article-thumbnail')->required()->enableOpen(),
-                Forms\Components\RichEditor::make('body')->name('body')->required()->disableToolbarButtons(['attachFiles', 'codeBlock', ]),
+                Forms\Components\RichEditor::make('body')->name('body')->required()->disableToolbarButtons(['codeBlock'])->fileAttachmentsDisk('public')->fileAttachmentsDirectory('article-image-content')->fileAttachmentsVisibility('private'),
                 Forms\Components\Select::make('category_id')->name('category_id')->label('Category')->options(Category::all()->pluck('name', 'id'))->required()->searchable(),
                 Forms\Components\TagsInput::make("tags")->label('Tag')->name('tags')->separator(','),
 //                Forms\Components\TextInput::make('user_id')->default(Filament::auth()->user()->getAuthIdentifier())->hidden(),

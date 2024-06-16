@@ -19,16 +19,16 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h2><a href="https://wa.me/6285173110904">+62 851 7311 0904</a></h2>
+                        <h2><a href="{{$contactWhatsapp->link}}">{{$contactWhatsapp->body}}</a></h2>
                         <p>
                             Butuh konsultasi? Hubungi Kami<br />
-                            <!-- untuk konsultasi ambulans yang sesuai dengan kebutuhan anda. -->
                         </p>
                     </div>
                 </div>
             </div>
             <!-- Banner Carousel -->
             <div class="banner-carousel owl-theme owl-carousel">
+                @forelse($heroSliders as $slide)
                 <!-- Slide -->
                 <div class="slide">
                     <div
@@ -36,7 +36,7 @@
                         style="
                             width: 1920px;
                             height: 800px;
-                            background-image: url({{asset('assets/images/slides/content-1.jpg')}});
+                            background-image: url({{asset('storage/' . $slide->thumbnail)}});
                             background-repeat: no-repeat;
                             background-position: center;
                             background-size: cover;
@@ -51,11 +51,11 @@
                             </div>
                             <div class="big-title">
                                 <h2>
-                                    Ambulans yang Siap Beraksi: Kualitas, Kustomisasi, dan Keandalan
+                                    {{$slide->caption}}
                                 </h2>
                             </div>
                             <div class="btns-box">
-                                <a class="btn-one" href="about.html">
+                                <a class="btn-one" href="#produk">
                                     <span class="txt">
                                         Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
                                     </span>
@@ -64,41 +64,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div
-                        class="image-layer"
-                        style="
-                            width: 1920px;
-                            height: 800px;
-                            background-image: url({{asset('assets/images/slides/content-2.jpg')}});
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            background-size: cover;
-                        "
-                    ></div>
-                    <div class="auto-container">
-                        <div class="content">
-                            <div class="sub-title">
-                                <h3>
-                                    Kualitas, Ketepatan, dan Kepuasan Adalah Prioritas Kami.
-                                </h3>
-                            </div>
-                            <div class="big-title">
-                                <h2>
-                                    Ambulans yang Siap Beraksi: Kualitas, Kustomisasi, dan Keandalan
-                                </h2>
-                            </div>
-                            <div class="btns-box">
-                                <a class="btn-one" href="about.html">
-                                    <span class="txt">
-                                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- End Slide  -->
+                @empty
+                    <h2>Set Slider First!</h2>
+                @endforelse
             </div>
         </div>
     </section>
@@ -160,20 +129,23 @@
     </section>
     <!--End Features Style1 Area-->
 
-    <!--Start Service Style1 Area-->
+    <!--Start Ambulance Style1 Area-->
     <section id="product" class="service-style1-area">
         <div class="container">
             <div class="sec-title text-center">
                 <div class="icon">
                     <span class="icon-heartbeat"></span>
                 </div>
+                <div class="text-center">
+                    <img class="rounded mx-auto d-block my-3" style="width: 30rem" src="{{asset('assets/images/resources/ecatalogue.png')}}" alt="LKPP E-Catalogue Logo">
+                </div>
                 <div class="sub-title">
-                    <h3>Apa yang anda butuhkan? Produk pilihan terbaik kami.</h3>
+                    <h3>Produk ambulans dan lainnya sudah tersedia di LKPP E-Catalogue.</h3>
                 </div>
-                <h2 style="letter-spacing: 10px">PRODUK</h2>
+                <h2 style="letter-spacing: 10px">AMBULANS</h2>
             </div>
-
             <div class="row">
+                @forelse($ambulances as $product)
                 <!--Start Single Service Style1-->
                 <div class="col-xl-4 col-lg-4">
                     <div
@@ -182,13 +154,13 @@
                         data-wow-duration="1500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
+                            <img src="{{asset('storage/' . $product->photo)}}" alt="{{$product->name}}" />
                         </div>
                         <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
+                            <h3><a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a></h3>
+                            <p>{{$product->caption}}</p>
                             <div class="btn-box">
-                                <a href="product-detail.html"
+                                <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
                                 >Lihat Lebih Detail <span class="icon-right-arrow"></span
                                     ></a>
                             </div>
@@ -196,116 +168,11 @@
                     </div>
                 </div>
                 <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
+                @empty
+                    <div class="row container pt-5" style="min-height: 100%">
+                        <h3 style="width: 100%" class="text-secondary text-center">Belum Produk Ambulans dan Lainnya</h3>
                     </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
+                @endforelse
             </div>
             <div style="text-align: center">
                 <div class="btns-box mx-auto">
@@ -318,16 +185,80 @@
             </div>
         </div>
     </section>
-    <!--End Service Style1 Area-->
+    <!--End Ambulance Style1 Area-->
+
+    <!--Start Non Ambulance Style1 Area-->
+    <section class="service-style1-area">
+        <div class="container">
+            <div class="sec-title text-center">
+                <div class="icon">
+                    <span class="icon-heartbeat"></span>
+                </div>
+                <div class="text-center">
+                    <img class="rounded mx-auto d-block my-3" style="width: 30rem" src="{{asset('assets/images/resources/ecatalogue.png')}}" alt="LKPP E-Catalogue Logo">
+                </div>
+                <div class="sub-title">
+                    <h3>Produk ambulans dan lainnya sudah tersedia di LKPP E-Catalogue.</h3>
+                </div>
+                <h2 style="letter-spacing: 10px">NON AMBULANS</h2>
+            </div>
+            <div class="row">
+                @forelse($nonAmbulances as $product)
+                    <!--Start Single Service Style1-->
+                    <div class="col-xl-4 col-lg-4">
+                        <div
+                            class="single-service-style1 wow fadeInUp"
+                            data-wow-delay="100ms"
+                            data-wow-duration="1500ms"
+                        >
+                            <div class="img-holder">
+                                <img src="{{asset('storage/' . $product->photo)}}" alt="{{$product->name}}" />
+                            </div>
+                            <div class="text-holder">
+                                <h3><a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a></h3>
+                                <p>{{$product->caption}}</p>
+                                <div class="btn-box">
+                                    <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
+                                    >Lihat Lebih Detail <span class="icon-right-arrow"></span
+                                        ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Service Style1-->
+                @empty
+                    <div class="row container pt-5" style="min-height: 100%">
+                        <h3 style="width: 100%" class="text-secondary text-center">Belum Produk Ambulans dan Lainnya</h3>
+                    </div>
+                @endforelse
+            </div>
+            <div style="text-align: center">
+                <div class="btns-box mx-auto">
+                    <a class="btn-one" href="all-product.html">
+                <span class="txt">
+                  Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
+                </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Non Ambulance Style1 Area-->
 
     <!--Start Testimonial Style1 Area-->
+    <div class="sec-title text-center">
+        <div class="icon">
+            <span class="icon-heartbeat"></span>
+        </div>
+        <h2 style="letter-spacing: 10px">TESTIMONI</h2>
+    </div>
     <section id="testimonial" class="testimonial-style1-area">
         <div
             class="shape wow slideInRight"
             data-wow-delay="400ms"
             data-wow-duration="3500ms"
         >
-            <img class="zoom-fade" src="assets/images/shape/shape-1.png" alt="" />
+            <img class="zoom-fade" src="{{asset('assets/images/shape/shape-1.png')}}" alt="" />
         </div>
         <div class="container">
             <div class="row">
@@ -357,20 +288,10 @@
                                 }
                             }'
                         >
+                            @forelse($testimonies as $testy)
                             <!--Start Single Testimonial Style1-->
                             <div class="single-testimonial-style1">
-                                <div class="img-holder">
-                                    <img
-                                        src="assets/images/testimonial/testimonial-v1-1.jpg"
-                                        alt=""
-                                    />
-                                    <div class="overlay-content">
-                                        <div class="quote-icon">
-                                            <img src="assets/images/icon/quote.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-holder">
+                                <div class="text-fluid mt-4">
                                     <div class="sec-title sec-title--style2">
                                         <div class="icon">
                                             <span class="icon-heartbeat"></span>
@@ -380,58 +301,27 @@
                                         </div>
                                         <h2>Apa kata mereka?</h2>
                                     </div>
-                                    <div class="text">
+                                    <div class="img-fluid">
+                                        <img
+                                            style="width: 50rem"
+                                            src="{{asset('storage/' . $testy->thumbnail)}}"
+                                            alt="{{$testy->institution_name}}"
+                                        />
+                                    </div>
+                                    <div class="text mt-5">
                                         <p>
-                                            This is due to their excellent service, competitive
-                                            pricing and customer support. It’s throughly refresing
-                                            to get such a personal touch.
+                                            {{$testy->body}}
                                         </p>
-                                        <h3>
-                                            Ahmad Zulhan
-                                            <span>- Kepala Dinas Kesehatan Kabupaten Bekasi</span>
-                                        </h3>
+                                        <p class="text-white">
+                                            <span>- {{$testy->institution_name}}</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <!--End Single Testimonial Style1-->
-
                             <!--Start Single Testimonial Style1-->
-                            <div class="single-testimonial-style1">
-                                <div class="img-holder">
-                                    <img
-                                        src="assets/images/testimonial/testimonial-v1-1.jpg"
-                                        alt=""
-                                    />
-                                    <div class="overlay-content">
-                                        <div class="quote-icon">
-                                            <img src="assets/images/icon/quote.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-holder">
-                                    <div class="sec-title sec-title--style2">
-                                        <div class="icon">
-                                            <span class="icon-heartbeat"></span>
-                                        </div>
-                                        <div class="sub-title">
-                                            <h3>Testimoni Kami</h3>
-                                        </div>
-                                        <h2>Apa kata mereka?</h2>
-                                    </div>
-                                    <div class="text">
-                                        <p>
-                                            This is due to their excellent service, competitive
-                                            pricing and customer support. It’s throughly refresing
-                                            to get such a personal touch.
-                                        </p>
-                                        <h3>
-                                            Ahmad Zulhan
-                                            <span>- Kepala Dinas Kesehatan Kabupaten Bekasi</span>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Single Testimonial Style1-->
+                            @empty
+                                <h2>Set Testimony First!</h2>
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -555,152 +445,103 @@
     </section>
     <!--End Features Style2 Area-->
 
-    <!--Start Partner Area-->
-    <section class="partner-area">
+    <!-- Gallery -->
+    <section id="gallery" class="blog-page-two">
         <div class="container">
-            <div class="brand-content">
+            <div class="sec-title text-center">
+                <div class="icon">
+                    <span class="icon-heartbeat"></span>
+                </div>
+                <h2 style="letter-spacing: 10px">GALLERY</h2>
+            </div>
+
+            <div class="row">
+                @forelse($galleryPhotos as $photo)
+                <!-- Start Single Image Gallery -->
                 <div
-                    class="inner"
-                    data-aos="slide-up"
-                    data-aos-easing="linear"
-                    data-aos-duration="1000"
+                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
                 >
-                    <ul
-                        class="partner-box partner-carousel owl-carousel owl-theme owl-dot-style1 rtl-carousel"
-                    >
-                        <!--Start Single Partner Logo Box-->
-                        <li class="single-partner-logo-box">
-                            <a href="#"
-                            ><img
-                                    src="assets/images/brand/omni.png"
-                                    alt="Customer Logo"
-                                /></a>
-                        </li>
-                        <!--End Single Partner Logo Box-->
-                        <!--Start Single Partner Logo Box-->
-                        <li class="single-partner-logo-box">
-                            <a href="#"
-                            ><img
-                                    src="assets/images/brand/sentra-medika.png"
-                                    alt="Customer Logo"
-                                    width="100%"
-                                /></a>
-                        </li>
-                        <!--End Single Partner Logo Box-->
-                        <!--Start Single Partner Logo Box-->
-                        <li class="single-partner-logo-box">
-                            <a href="#"
-                            ><img
-                                    src="assets/images/brand/siloam.png"
-                                    alt="Customer Logo"
-                                    width="100%"
-                                /></a>
-                        </li>
-                        <!--End Single Partner Logo Box-->
-                    </ul>
+                    <div class="img-box1">
+                        <img src="{{asset('storage/' . $photo->content)}}" alt="{{$photo->caption}}" />
+                    </div>
+                </div>
+                <!-- End Single Image Gallery -->
+                @empty
+                    <h1>No Gallery Found</h1>
+                @endforelse
+            </div>
+            <div style="text-align: center; padding: 20px;">
+                <div class="btns-box mx-auto">
+                    <a class="btn-one" href="{{route('gallery.index')}}">
+                <span class="txt">
+                  Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
+                </span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    <!--End Partner Area-->
+    <!--End Gallery -->
 
-    <!--Start slogan area-->
-    <section class="slogan-area">
-        <div
-            class="map-box wow slideInRight"
-            data-wow-delay="1400ms"
-            data-wow-duration="5500ms"
-        >
-            <img class="float-bob" src="assets/images/shape/map.png" alt="" />
-        </div>
+    <!--Start COMPONY PROFIL-->
+    <section  class="service-style1-area">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-12">
-                    <div class="slogan-img-box">
-                        <div
-                            class="inner wow slideInLeft"
-                            data-wow-delay="400ms"
-                            data-wow-duration="2000ms"
-                        >
-                            <img
-                                class="float-bob-y"
-                                src="assets/images/resources/slogan.png"
-                                alt=""
-                            />
+                <div class="col-xl-12 ">
+                    <div class="service-style1 ">
+                        <div class="sec-title text-center">
+                            <div class="icon">
+                                <span class="icon-heartbeat"></span>
+                            </div>
+                            <div class="sub-title">
+                                <h3></h3>
+                            </div>
+                            <h2 style="letter-spacing: 10px">COMPANNY PROFILE</h2>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-12">
-                    <div class="slogan-text-box">
-                        <h2>
-                            Tertarik lebih dalam dengan <br />
-                            ambulans kami?
-                        </h2>
-                        <div class="slogan-btn-box mt-3">
-                            <a class="btn-one" href="#">
-                                <span class="txt">Unduh Brosur</span>
-                            </a>
-                        </div>
-                        <h4>
-                            Atau hubungi kami <br />
-                            <br />
-                            <a href="#">085893210906</a>
-                        </h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End slogan area-->
+                        <!-- Start yotube 1 -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="single-features-style1 wow fadeInUp">
+                                        <iframe
+                                            class="mt-3"
+                                            style="width: 100%; height: 30rem"
+                                            src="https://www.youtube.com/embed/Qu6jI9auRJQ?si=MhPGqSbykrFmof_g&amp;controls=0"
+                                            title="Company Profile PT Ambulance Pintar Indonesia"
+                                            frameborder="1"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin"
+                                            allowfullscreen
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End start youtube 1 -->
 
-    <!--Start Partner Area-->
-    <section class="partner-area" style="margin-top: 100px">
-        <div class="container">
-            <div class="brand-content">
-                <div
-                    class="inner"
-                    data-aos="slide-up"
-                    data-aos-easing="linear"
-                    data-aos-duration="1000"
-                >
-                    <ul
-                        class="partner-box partner-carousel owl-carousel owl-theme owl-dot-style1 rtl-carousel"
-                    >
-                        <!--Start Single Partner Logo Box-->
-                        <li class="single-partner-logo-box">
-                            <a href="#"
-                            ><img
-                                    src="assets/images/brand/omni.png"
-                                    alt="Customer Logo"
-                                /></a>
-                        </li>
-                        <!--End Single Partner Logo Box-->
-                        <!--Start Single Partner Logo Box-->
-                        <li class="single-partner-logo-box">
-                            <a href="#"
-                            ><img
-                                    src="assets/images/brand/sentra-medika.png"
-                                    alt="Customer Logo"
-                                    width="100%"
-                                /></a>
-                        </li>
-                        <!--End Single Partner Logo Box-->
-                        <!--Start Single Partner Logo Box-->
-                        <li class="single-partner-logo-box">
-                            <a href="#"
-                            ><img
-                                    src="assets/images/brand/siloam.png"
-                                    alt="Customer Logo"
-                                    width="100%"
-                                /></a>
-                        </li>
-                        <!--End Single Partner Logo Box-->
-                    </ul>
+                            <!-- Start youtube 2 -->
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="single-features-style1 wow fadeInUp">
+                                        <iframe
+                                            class="mt-3"
+                                            style="width: 100%; height: 30rem"
+                                            src="https://www.youtube.com/embed/elIjp0YQjsk?si=MhPGqSbykrFmof_g&amp;controls=0"
+                                            title="Company Profile PT Ambulance Pintar Indonesia"
+                                            frameborder="1"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin"
+                                            allowfullscreen
+                                        ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--End Partner Area-->
+    <!--End Features Style3 Area-->
 
     <!--Start Blog Style1 Area-->
     <section id="article" class="blog-style1-area">
@@ -716,6 +557,7 @@
                 <h2 style="letter-spacing: 10px">ARTIKEL</h2>
             </div>
             <div class="row">
+                @forelse($popularArticles as $article)
                 <!--Start Single Blog Style1-->
                 <div class="col-xl-4 col-lg-4">
                     <div
@@ -725,103 +567,38 @@
                         data-aos-duration="1000"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
+                            <img src="{{asset('storage/' . $article->thumbnail)}}" alt="{{$article->title}}" />
                         </div>
                         <div class="text-holder">
                             <div class="meta-info">
                                 <p>
-                                    <span class="icon-calendar"></span> Senin, 12 September
-                                    2024
+                                    <span class="icon-calendar"></span> {{date('l, j F Y', strtotime($article->created_at))}}
                                 </p>
                             </div>
                             <h3>
-                                <a href="blog-detail.html"
-                                >Trusted, International Air Ambulance Company</a
+                                <a href="{{route('articles.show', ['article' => $article->slug])}}"
+                                >{{$article->title}}</a
                                 >
                             </h3>
                             <p>
-                                Lorem ipsum dolor sit amet, coned sectetur notte elit sed
-                                do.
+                                {!! str($article->body)->limit(50) !!}
                             </p>
                             <div class="btn-box">
-                                <a href="blog-detail.html">Baca Lebih Detail</a>
+                                <a href="{{route('articles.show', ['article' => $article->slug])}}">Baca Lebih Detail</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--End Single Blog Style1-->
-                <!--Start Single Blog Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-blog-style1"
-                        data-aos="fade-down"
-                        data-aos-easing="linear"
-                        data-aos-duration="1000"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <div class="meta-info">
-                                <p>
-                                    <span class="icon-calendar"></span> Senin, 12 September
-                                    2024
-                                </p>
-                            </div>
-                            <h3>
-                                <a href="blog-detail.html"
-                                >Trusted, International Air Ambulance Company</a
-                                >
-                            </h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, coned sectetur notte elit sed
-                                do.
-                            </p>
-                            <div class="btn-box">
-                                <a href="blog-detail.html">Baca Lebih Detail</a>
-                            </div>
-                        </div>
+                @empty
+                    <div class="row container pt-5" style="min-height: 100%">
+                        <h3 style="width: 100%" class="text-secondary text-center">Belum Ada Artikel</h3>
                     </div>
-                </div>
-                <!--End Single Blog Style1-->
-                <!--Start Single Blog Style1-->
-                <div class="col-xl-4 col-lg-4">
-                    <div
-                        class="single-blog-style1"
-                        data-aos="fade-down"
-                        data-aos-easing="linear"
-                        data-aos-duration="1000"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <div class="meta-info">
-                                <p>
-                                    <span class="icon-calendar"></span> Senin, 12 September
-                                    2024
-                                </p>
-                            </div>
-                            <h3>
-                                <a href="blog-detail.html"
-                                >Trusted, International Air Ambulance Company</a
-                                >
-                            </h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, coned sectetur notte elit sed
-                                do.
-                            </p>
-                            <div class="btn-box">
-                                <a href="blog-detail.html">Baca Lebih Detail</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Blog Style1-->
+                @endforelse
             </div>
             <div style="text-align: center">
                 <div class="btns-box mx-auto">
-                    <a class="btn-one" href="all-article.html">
+                    <a class="btn-one" href="{{route('articles.index')}}">
                 <span class="txt">
                   Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
                 </span>
@@ -837,7 +614,7 @@
         <div
             class="video-gallery-style1__bg"
             style="
-            background-image: url(assets/images/resources/slide-content.png);
+            background-image: url({{asset('assets/images/resources/slide-content.png')}});
           "
         ></div>
         <div class="container">
@@ -869,17 +646,6 @@
                             referrerpolicy="strict-origin-when-cross-origin"
                             allowfullscreen
                         ></iframe>
-                        <!-- <div class="video-gallery-style1">
-                          <div
-                            class="icon wow zoomIn animated"
-                            data-wow-delay="300ms"
-                            data-wow-duration="1500ms"
-                          >
-                            <a class="video-popup" title="Video Gallery" href="#">
-                              <span class="icon-play-button"></span>
-                            </a>
-                          </div>
-                        </div> -->
                         <div class="slogan-btn-box mt-3">
                             <a class="btn-one px-5" href="gallery.html">
                                 <span class="txt">Lihat Galeri Kami</span>
@@ -903,45 +669,48 @@
                                 <h3>Tentang Kami</h3>
                             </div>
                             <h2 class="notranslate">
-                                PT Ambulance Pintar <br />Indonesia
+                                {{$companyName->body ?? "Set Company Name"}}
                             </h2>
                         </div>
                         <div class="inner-content">
                             <div class="text">
-                                <p>#Deskripsi Perusahaan#</p>
+                                <div class="btn-box" >
+                                    <a href="{{route('web.about')}}" style="color: rgb(228, 82, 82);"
+                                    ><b>Tentang Kami</b> <span class="icon-right-arrow"></span
+                                        ></a>
+                                </div>
                             </div>
-                            <h3>Alamat Utama</h3>
+                            <h3>{{$address->description ?? "Set Address"}}</h3>
                             <p>
-                                Griya Asri Bahagia, Blok E2 No. 13, <br />
-                                Kel. Bahagia, Kec. Babelan, Bekasi 17610
+                                {{$address->body ?? "Set Address"}}
                             </p>
                             <div class="header-social-link">
                                 <ul class="clearfix">
                                     <li>
-                                        <a href="mailto:azmbkhry@gmail.com" title="Email"
+                                        <a href="{{$contactEmail->link ?? "#"}}" title="Email"
                                         ><i class="fa-solid fa-envelope"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="tel:+6285893210906" title="Telepon"
+                                        <a href="{{$contactTelephone->link ?? "#"}}" title="Telepon"
                                         ><i class="fa-solid fa-phone-volume"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="https://wa.me/6285173110904" title="WhatsApp"
+                                        <a href="{{$contactWhatsapp->link ?? "#"}}" title="WhatsApp"
                                         ><i class="fa-brands fa-whatsapp"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                                        <a href="{{$facebook->link ?? "#"}}" title="{{$facebook->body}}"
                                         ><i class="fa-brands fa-facebook"></i
                                             ></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="{{$youtube1->link ?? "#"}}" title="{{$youtube1->body}}"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="{{$youtube2->link ?? "#"}}" title="{{$youtube2->body}}"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -990,52 +759,22 @@
                     </div>
                     <div class="faq-style1-content">
                         <ul class="accordion-box">
+                            @forelse($branchOffices as $branch)
                             <li class="accordion block">
                                 <div class="acc-btn">
                                     <div class="icon-outer">
                                         <i class="flaticon-down-arrow-2"></i>
                                     </div>
-                                    <h3>Bekasi</h3>
+                                    <h3>{{$branch->city_name}}</h3>
                                 </div>
                                 <div class="acc-content">
                                     <h3>Alamat</h3>
                                     <p>
-                                        Griya Asri Bahagia, Blok E2 No. 13, <br />
-                                        Kel. Bahagia, Kec. Babelan, Bekasi 17610
+                                        {!! $branch->contact_address !!}
                                     </p>
-                                    <div class="header-social-link">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
-                                                ><i class="fa-solid fa-envelope"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="tel:+6285893210906" title="Telepon"
-                                                ><i class="fa-solid fa-phone-volume"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
-                                                ><i class="fa-brands fa-whatsapp"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
-                                                ><i class="fa-brands fa-facebook"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                     <div class="inner-img-box mt-3">
                                         <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.679339706034!2d107.02192737407803!3d-6.1736683604957445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69894a3b26f3c9%3A0xd1041d4cde894037!2sPT.%20Ambulance%20Pintar%20Indonesia%20Official%20%2F%2F%20Jual%20Mobil%20Ambulance%20Ready%20Stock!5e0!3m2!1sid!2sid!4v1716826627078!5m2!1sid!2sid"
+                                            src="{{$branch->maps_link}}"
                                             width="100%"
                                             height="200"
                                             style="border: 0"
@@ -1046,226 +785,11 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>Padang</h3>
+                            @empty
+                                <div class="row container pt-5" style="min-height: 100%">
+                                    <h3 style="width: 100%" class="text-secondary text-center">Belum Cabang</h3>
                                 </div>
-                                <div class="acc-content">
-                                    <h3>Alamat</h3>
-                                    <p>
-                                        675R+3M3, Katapiang, Kec. Batang Anai, Kabupaten Padang Pariaman, Sumatera Barat 25586 <br />
-                                    </p>
-                                    <div class="header-social-link">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
-                                                ><i class="fa-solid fa-envelope"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="tel:+6285893210906" title="Telepon"
-                                                ><i class="fa-solid fa-phone-volume"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
-                                                ><i class="fa-brands fa-whatsapp"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
-                                                ><i class="fa-brands fa-facebook"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner-img-box mt-3">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.4367909751436!2d100.2916654!3d-0.7923709000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4c3c50614fa51%3A0xcba985f1b8506ba7!2sWORKSHOP%20KAROSERI%20AMBULANCE%20PT.%20ANDALAS%20PROSPEK%20INDONESIA!5e0!3m2!1sid!2sid!4v1717695285418!5m2!1sid!2sid"
-                                            width="100%"
-                                            height="200"
-                                            style="border: 0"
-                                            allowfullscreen=""
-                                            loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>Semarang</h3>
-                                </div>
-                                <div class="acc-content">
-                                    <h3>Alamat</h3>
-                                    <p>
-                                        Jl. Wonodri Baru Raya No.7, Wonodri, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50242 <br />
-                                    </p>
-                                    <div class="header-social-link">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
-                                                ><i class="fa-solid fa-envelope"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="tel:+6285893210906" title="Telepon"
-                                                ><i class="fa-solid fa-phone-volume"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
-                                                ><i class="fa-brands fa-whatsapp"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
-                                                ><i class="fa-brands fa-facebook"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner-img-box mt-3">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0611838994296!2d110.430887!3d-7.0020777999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d00415b0b3d%3A0x1af91bb4f40d7c8e!2sPT.%20Asia%20Persada%20Indonesia!5e0!3m2!1sid!2sid!4v1717695404398!5m2!1sid!2sid"
-                                            width="100%"
-                                            height="200"
-                                            style="border: 0"
-                                            allowfullscreen=""
-                                            loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>Gresik</h3>
-                                </div>
-                                <div class="acc-content">
-                                    <h3>Alamat</h3>
-                                    <p>
-                                        Jl. Raya Boboh, Gantang, Boboh, Kec. Menganti, Kabupaten Gresik, Jawa Timur 61174 <br />
-                                    </p>
-                                    <div class="header-social-link">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
-                                                ><i class="fa-solid fa-envelope"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="tel:+6285893210906" title="Telepon"
-                                                ><i class="fa-solid fa-phone-volume"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
-                                                ><i class="fa-brands fa-whatsapp"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
-                                                ><i class="fa-brands fa-facebook"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner-img-box mt-3">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.9121283960317!2d112.56851429999999!3d-7.250841299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78014de06e8fcf%3A0x189f08bd0848a6a7!2sPT.%20Ambulance%20Pintar%20Indonesia%20cabang%20ke-4%2C%20Gresik!5e0!3m2!1sid!2sid!4v1717695473614!5m2!1sid!2sid"
-                                            width="100%"
-                                            height="200"
-                                            style="border: 0"
-                                            allowfullscreen=""
-                                            loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>Makassar</h3>
-                                </div>
-                                <div class="acc-content">
-                                    <h3>Alamat</h3>
-                                    <p>
-                                        Jl. Abdul Rasyid Dg. Lurang No.25-33, Tombolo, Kec. Somba Opu, Kabupaten Gowa, Sulawesi Selatan 92113 <br />
-                                    </p>
-                                    <div class="header-social-link">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <a href="mailto:azmbkhry@gmail.com" title="Email"
-                                                ><i class="fa-solid fa-envelope"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="tel:+6285893210906" title="Telepon"
-                                                ><i class="fa-solid fa-phone-volume"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://wa.me/6285173110904" title="WhatsApp"
-                                                ><i class="fa-brands fa-whatsapp"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
-                                                ><i class="fa-brands fa-facebook"></i
-                                                    ></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner-img-box mt-3">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.4154518431797!2d119.46375889999997!3d-5.197205299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee3007b6067eb%3A0x98ffe7ab5b615bf2!2sAPI%20GROUP%20Makassar!5e0!3m2!1sid!2sid!4v1717695521445!5m2!1sid!2sid"
-                                            width="100%"
-                                            height="200"
-                                            style="border: 0"
-                                            allowfullscreen=""
-                                            loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </li>
+                            @endforelse
                         </ul>
                     </div>
                 </div>

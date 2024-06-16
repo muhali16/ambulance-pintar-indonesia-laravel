@@ -5,8 +5,8 @@
     <!-- Search Box Section -->
     <section>
         <div class="sidebar-search-box" style="padding-top: 6rem">
-            <form class="search-form" action="#">
-                <input placeholder="Cari Ambulans" type="text" />
+            <form class="search-form container" action="{{route('web.search')}}" method="get">
+                <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ''}}" type="text" />
                 <button type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
@@ -15,18 +15,19 @@
     </section>
     <!-- End Search Box Section -->
 
+    @if($productCategory->name === "Ambulance")
     <!--Start Blog Style2 Area-->
-    <section class="mt-5 ltr">
+    <section class="mt-5 ltr" style="position: relative;display: block;padding: 10px 0 10px;background: #ffffff;z-index: 10;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4">
                     <div class="blog-style2__title">
                         <div class="sec-title">
                             <div class="sub-title">
-                                <h3>Ambulans Terbaik Kami</h3>
+                                <h3>{{$productCategory->name}}</h3>
                             </div>
                             <h2>
-                                Ambulans Terbaik<br />
+                                {{$productCategory->name . " "}} Terbaik<br />
                                 Dari Kami
                             </h2>
                         </div>
@@ -73,6 +74,7 @@
                             }
                         }'
                         >
+                            @foreach($bestProducts as $product)
                             <!--Start Single Service Style1-->
                             <div>
                                 <div
@@ -81,18 +83,17 @@
                                     data-wow-duration="1500ms"
                                 >
                                     <div class="img-holder">
-                                        <img src="assets/images/services/produk.jpg" alt="" />
+                                        <img src="{{asset('storage/' . $product->photo)}}" alt="{{$product->name}}" />
                                     </div>
                                     <div class="text-holder">
                                         <h3>
-                                            <a href="product-detail.html">Ambulans Suzuki</a>
+                                            <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a>
                                         </h3>
                                         <p>
-                                            Ambulans dibuat menggunakan body yang kuat dari
-                                            Suzuki.
+                                            {{$product->caption}}
                                         </p>
                                         <div class="btn-box">
-                                            <a href="product-detail.html"
+                                            <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
                                             >Lihat Lebih Detail
                                                 <span class="icon-right-arrow"></span
                                                 ></a>
@@ -101,146 +102,7 @@
                                 </div>
                             </div>
                             <!--End Single Service Style1-->
-                            <!--Start Single Service Style1-->
-                            <div>
-                                <div
-                                    class="single-service-style1 wow fadeInUp"
-                                    data-wow-delay="100ms"
-                                    data-wow-duration="1500ms"
-                                >
-                                    <div class="img-holder">
-                                        <img src="assets/images/services/produk.jpg" alt="" />
-                                    </div>
-                                    <div class="text-holder">
-                                        <h3>
-                                            <a href="product-detail.html">Ambulans Suzuki</a>
-                                        </h3>
-                                        <p>
-                                            Ambulans dibuat menggunakan body yang kuat dari
-                                            Suzuki.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="product-detail.html"
-                                            >Lihat Lebih Detail
-                                                <span class="icon-right-arrow"></span
-                                                ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Single Service Style1-->
-                            <!--Start Single Service Style1-->
-                            <div>
-                                <div
-                                    class="single-service-style1 wow fadeInUp"
-                                    data-wow-delay="100ms"
-                                    data-wow-duration="1500ms"
-                                >
-                                    <div class="img-holder">
-                                        <img src="assets/images/services/produk.jpg" alt="" />
-                                    </div>
-                                    <div class="text-holder">
-                                        <h3>
-                                            <a href="product-detail.html">Ambulans Suzuki</a>
-                                        </h3>
-                                        <p>
-                                            Ambulans dibuat menggunakan body yang kuat dari
-                                            Suzuki.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="product-detail.html"
-                                            >Lihat Lebih Detail
-                                                <span class="icon-right-arrow"></span
-                                                ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Single Service Style1-->
-                            <!--Start Single Service Style1-->
-                            <div>
-                                <div
-                                    class="single-service-style1 wow fadeInUp"
-                                    data-wow-delay="100ms"
-                                    data-wow-duration="1500ms"
-                                >
-                                    <div class="img-holder">
-                                        <img src="assets/images/services/produk.jpg" alt="" />
-                                    </div>
-                                    <div class="text-holder">
-                                        <h3>
-                                            <a href="product-detail.html">Ambulans Suzuki</a>
-                                        </h3>
-                                        <p>
-                                            Ambulans dibuat menggunakan body yang kuat dari
-                                            Suzuki.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="product-detail.html"
-                                            >Lihat Lebih Detail
-                                                <span class="icon-right-arrow"></span
-                                                ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Single Service Style1-->
-                            <!--Start Single Service Style1-->
-                            <div>
-                                <div
-                                    class="single-service-style1 wow fadeInUp"
-                                    data-wow-delay="100ms"
-                                    data-wow-duration="1500ms"
-                                >
-                                    <div class="img-holder">
-                                        <img src="assets/images/services/produk.jpg" alt="" />
-                                    </div>
-                                    <div class="text-holder">
-                                        <h3>
-                                            <a href="product-detail.html">Ambulans Suzuki</a>
-                                        </h3>
-                                        <p>
-                                            Ambulans dibuat menggunakan body yang kuat dari
-                                            Suzuki.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="product-detail.html"
-                                            >Lihat Lebih Detail
-                                                <span class="icon-right-arrow"></span
-                                                ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Single Service Style1-->
-                            <!--Start Single Service Style1-->
-                            <div>
-                                <div
-                                    class="single-service-style1 wow fadeInUp"
-                                    data-wow-delay="100ms"
-                                    data-wow-duration="1500ms"
-                                >
-                                    <div class="img-holder">
-                                        <img src="assets/images/services/produk.jpg" alt="" />
-                                    </div>
-                                    <div class="text-holder">
-                                        <h3>
-                                            <a href="product-detail.html">Ambulans Suzuki</a>
-                                        </h3>
-                                        <p>
-                                            Ambulans dibuat menggunakan body yang kuat dari
-                                            Suzuki.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="product-detail.html"
-                                            >Lihat Lebih Detail
-                                                <span class="icon-right-arrow"></span
-                                                ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Single Service Style1-->
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -248,26 +110,28 @@
         </div>
     </section>
     <!--End Blog Style2 Area-->
+    @endif
 
     <!--Start Service page-->
-    <section class="service-page" style="padding-top: -7rem">
+    <section class="service-page">
         <div class="container">
             <div class="row">
+                @forelse($products as $product)
                 <!--Start Single Service Style1-->
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div
                         class="single-service-style1 wow fadeInUp"
                         data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
+                        data-wow-duration="500ms"
                     >
                         <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
+                            <img src="{{asset('storage/' . $product->photo)}}" alt="{{$product->name}}" />
                         </div>
                         <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
+                            <h3><a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a></h3>
+                            <p>Jadikan lebih banyak ahli dengan</p>
                             <div class="btn-box">
-                                <a href="product-detail.html"
+                                <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
                                 >Lihat Lebih Detail <span class="icon-right-arrow"></span
                                     ></a>
                             </div>
@@ -275,116 +139,11 @@
                     </div>
                 </div>
                 <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
+                @empty
+                    <div class="row container pt-5" style="min-height: 100%">
+                        <h3 style="width: 100%" class="text-secondary text-center">Belum Ada Produk</h3>
                     </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
-                <!--Start Single Service Style1-->
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div
-                        class="single-service-style1 wow fadeInUp"
-                        data-wow-delay="100ms"
-                        data-wow-duration="1500ms"
-                    >
-                        <div class="img-holder">
-                            <img src="assets/images/services/produk.jpg" alt="" />
-                        </div>
-                        <div class="text-holder">
-                            <h3><a href="product-detail.html">Ambulans Suzuki</a></h3>
-                            <p>Ambulans dibuat menggunakan body yang kuat dari Suzuki.</p>
-                            <div class="btn-box">
-                                <a href="product-detail.html"
-                                >Lihat Lebih Detail <span class="icon-right-arrow"></span
-                                    ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Service Style1-->
+                @endforelse
             </div>
         </div>
     </section>

@@ -1,4 +1,4 @@
-/*** 
+/***
 =============================================
     Footer area style
 =============================================
@@ -313,6 +313,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+    text-align: center;
   flex-wrap: wrap;
   padding: 28px 0px 29px;
 }

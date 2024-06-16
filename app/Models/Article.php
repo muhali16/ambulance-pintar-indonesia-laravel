@@ -61,7 +61,7 @@ class Article extends Model
                 })
             ->when(request()->category ?? false, function ($query) {
                 return $query->where('category_id', request()->category);
-            });
+            })->where('is_publish', 1);
     }
 
     public function scopePopularArticlesInMonth($query)

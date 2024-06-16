@@ -1,5 +1,27 @@
 @extends("web.layouts.main")
 @section("content")
+    <style>
+        #notStyled ol li {
+            /* Menghilangkan margin dan padding */
+            margin-bottom: 5px; /* Jarak antara item daftar */
+            padding-left: 10px; /* Jarak dari sisi kiri ke konten item */
+            margin-left: 20px;
+            /* Mengembalikan list-style-type ke default */
+            /*list-style-type: disc; !* Untuk unordered list *!*/
+            list-style: decimal;
+        }
+
+        /* Mengembalikan elemen ul dan ol ke gaya default HTML */
+        #notStyled ul li {
+            /* Menghilangkan margin dan padding */
+            margin-bottom: 5px; /* Jarak antara item daftar */
+            padding-left: 10px; /* Jarak dari sisi kiri ke konten item */
+            margin-left: 20px;
+            /* Mengembalikan list-style-type ke default */
+            /*list-style-type: disc; !* Untuk unordered list *!*/
+            list-style-image: url({{asset('assets/icon/check.svg')}});
+        }
+    </style>
     @include("web.layouts.preloader")
     @include("web.layouts.header")
     <!--Start Service Details area -->
@@ -9,64 +31,58 @@
                 <!--Start Service Details Sidebar -->
                 <div class="col-xl-4 col-lg-5 order-box-2">
                     <div class="service-details__sidebar">
-                        <div
-                            class="view-all-service"
-                            data-aos="slide-up"
-                            data-aos-easing="linear"
-                            data-aos-duration="1000"
-                        >
-                            <ul class="service-pages">
-                                <li class="active">
-                                    <a href="#">
-                                        Spesifikasi Ekonomi <span class="icon-next-1"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#">
-                                        Spesifikasi Standar 1 <span class="icon-next-1"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#">
-                                        Spesifikasi Standar 2 <span class="icon-next-1"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#">
-                                        Spesifikasi Deluxe <span class="icon-next-1"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#">
-                                        Spesifikasi Mobil Jenazah
-                                        <span class="icon-next-1"></span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="single-sidebar-box">
+                            <div class="sidebar-title">
+                                <h3>Produk Terbaik</h3>
+                            </div>
+                            <div class="sidebar-blog-post">
+                                <ul class="blog-post">
+                                    @foreach($bestProducts as $product)
+                                        <li>
+                                            <div class="inner">
+                                                <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $product->photo)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
+                                                    <div class="overlay-content">
+                                                        <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
+                                                        ><i
+                                                                class="fa-solid fa-link"
+                                                                aria-hidden="true"
+                                                            ></i
+                                                            ></a>
+                                                    </div>
+                                                </div>
+                                                <div class="title-box">
+                                                    <h4>
+                                                        <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
+                                                        >{{$product->name}}</a
+                                                        >
+                                                    </h4>
+                                                    <div class="admin pt-2">
+                                                        <p>{{$product->caption}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
 
                         <div
-                            class="service-details-contact-info"
-                            data-aos="slide-up"
-                            data-aos-easing="linear"
-                            data-aos-duration="1000"
+                            class="service-details-contact-info mt-5"
                         >
                             <div
                                 class="sidebar-info-box-bg"
                                 style="
-                          background-image: url(assets/images/services/produk.jpg);
+                          background-image: url({{asset('assets/images/services/produk.jpg')}});
                         "
                             ></div>
                             <h3>Butuh bantuan?</h3>
                             <p>Konsultasikan ambulans sesuai dengan kebutuhan anda.</p>
-                            <h2><a href="#">+ 1- (246) 333-0089</a></h2>
+                            <h2><a href="{{$contactWhatsapp->link}}">{{$contactWhatsapp->body}}</a></h2>
                         </div>
 
                         <div
                             class="info-download-box"
-                            data-aos="slide-up"
-                            data-aos-easing="linear"
-                            data-aos-duration="1000"
                         >
                             <ul>
                                 <li>
@@ -74,7 +90,7 @@
                                         <span class="icon-checked-1"></span>
                                     </div>
                                     <div class="title">
-                                        <h5><a href="#">Download our Broucher</a></h5>
+                                        <h5><a href="{{$product->brosure}}">Download Brosur Produk</a></h5>
                                     </div>
                                 </li>
                             </ul>
@@ -88,172 +104,129 @@
                     <div class="service-details__content">
                         <div class="img-box1">
                             <img
-                                src="assets/images/services/service-details-1-img1.jpg"
-                                alt=""
+                                src="{{asset('storage/' . $productDetail->photo)}}"
+                                alt="{{$productDetail->name}}"
                             />
                         </div>
-
                         <div class="text-box1">
-                            <h2>Ambulans Suzuki</h2>
-                            <p>
-                                Lorem ipsum is simply free text used by copytyping
-                                refreshing. Neque porro est qui dolorem ipsum quia quaed
-                                inventore veritatis et quasi architecto beatae vitae dicta
-                                sunt explicabo. Aelltes port lacus quis enim var sed
-                                efficitur turpis gilla sed sit amet finibus eros. Lorem
-                                Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the ndustry standard dummy
-                                text ever since the 1500s.
-                            </p>
-                            <p>
-                                It has survived not only five centuries. Lorem Ipsum is
-                                simply dummy text of the new design printng and type setting
-                                Ipsum take a look at our round. When an unknown printer took
-                                a galley of type and scrambled it to make a type specimen
-                                book. It has survived not only five centuries, but also the
-                                leap into electronic typesetting.
-                            </p>
-                        </div>
-
-                        <div class="text-box2">
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div
-                                        class="text-box2-single"
-                                        data-aos="fade-right"
-                                        data-aos-easing="linear"
-                                        data-aos-duration="2500"
-                                    >
-                                        <h4>
-                                            <span class="icon-right-arrow"></span> Help us Save a
-                                            Life
-                                        </h4>
-                                        <p>
-                                            Nullam mollis elit quis dusto is lacinia efficitur
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-6">
-                                    <div
-                                        class="text-box2-single"
-                                        data-aos="fade-left"
-                                        data-aos-easing="linear"
-                                        data-aos-duration="2500"
-                                    >
-                                        <h4>
-                                            <span class="icon-right-arrow"></span> Join our Big
-                                            Family
-                                        </h4>
-                                        <p>
-                                            Nullam mollis elit quis dusto is lacinia efficitur
-                                        </p>
-                                    </div>
-                                </div>
+                            <h2>{{$productDetail->name}}</h2>
+                            <div id="notStyled">
+                                {!! $productDetail->specification !!}
                             </div>
                         </div>
 
-                        <div class="text-box3">
-                            <p>
-                                When an unknown printer took a galley of type and scrambled
-                                it to make a type specimen book. It has survived not only
-                                five centuries, but also the leap into electronic
-                                typesetting. Lorem Ipsum has been the ndustry standard dummy
-                                text ever since the 1500s.
-                            </p>
-                        </div>
-
-                        <div class="text-box4">
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="content-box">
-                                        <h2>Service Benefits</h2>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate
-                                            velit esse cillum.
-                                        </p>
-
-                                        <ul>
-                                            <li>
-                                                <span class="icon-checked"></span> In id diam nec
-                                                nisi congue tincidunt
-                                            </li>
-                                            <li>
-                                                <span class="icon-checked"></span> Pn malesuada
-                                                purus a ligula dapibus
-                                            </li>
-                                            <li>
-                                                <span class="icon-checked"></span> Vestibulum
-                                                tincidunt arcu vel nisl
-                                            </li>
-                                            <li>
-                                                <span class="icon-checked"></span> Sed tristique
-                                                lorem non tesque
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-6">
-                                    <div class="img-box">
-                                        <img
-                                            src="assets/images/services/service-details-img2.jpg"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @if($productDetail->is_use_product_specification)
                         <div class="faq-style1__content">
                             <ul class="accordion-box">
-                                <li class="accordion block active-block">
-                                    <div class="acc-btn active">
-                                        <div class="icon-outer">
-                                            <i class="icon-down-arrow"></i>
-                                        </div>
-                                        <h3>Interdum et malesuada fames ac ante ipsum</h3>
-                                    </div>
-                                    <div class="acc-content current">
-                                        <p>
-                                            Suspendisse finibus urna mauris, vitae consequat quam
-                                            vel. Vestibulum leo ligula, vit commodo nisl Sed
-                                            luctus venenatis pellentesque.
-                                        </p>
-                                    </div>
-                                </li>
+                                @foreach($productCategories as $category)
                                 <li class="accordion block">
                                     <div class="acc-btn">
                                         <div class="icon-outer">
                                             <i class="icon-down-arrow"></i>
                                         </div>
-                                        <h3>Maecenas condimentum sollicitudin ligula.</h3>
+                                        <h3>{{$category->name}}</h3>
                                     </div>
                                     <div class="acc-content">
-                                        <p>
-                                            Suspendisse finibus urna mauris, vitae consequat quam
-                                            vel. Vestibulum leo ligula, vit commodo nisl Sed
-                                            luctus venenatis pellentesque.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="accordion block">
-                                    <div class="acc-btn">
-                                        <div class="icon-outer">
-                                            <i class="icon-down-arrow"></i>
+                                        <div id="notStyled">
+                                            {!! $category->specification !!}
                                         </div>
-                                        <h3>Duis rhoncus orci ut metus rhoncus.</h3>
-                                    </div>
-                                    <div class="acc-content">
-                                        <p>
-                                            Suspendisse finibus urna mauris, vitae consequat quam
-                                            vel. Vestibulum leo ligula, vit commodo nisl Sed
-                                            luctus venenatis pellentesque.
-                                        </p>
                                     </div>
                                 </li>
+                                @endforeach
                             </ul>
                         </div>
+                        @endif
+{{--                       <div class="text-box2">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-6">--}}
+{{--                                    <div--}}
+{{--                                        class="text-box2-single"--}}
+{{--                                        data-aos="fade-right"--}}
+{{--                                        data-aos-easing="linear"--}}
+{{--                                        data-aos-duration="2500"--}}
+{{--                                    >--}}
+{{--                                        <h4>--}}
+{{--                                            <span class="icon-right-arrow"></span> Help us Save a--}}
+{{--                                            Life--}}
+{{--                                        </h4>--}}
+{{--                                        <p>--}}
+{{--                                            Nullam mollis elit quis dusto is lacinia efficitur--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                                <div class="col-xl-6">--}}
+{{--                                    <div--}}
+{{--                                        class="text-box2-single"--}}
+{{--                                        data-aos="fade-left"--}}
+{{--                                        data-aos-easing="linear"--}}
+{{--                                        data-aos-duration="2500"--}}
+{{--                                    >--}}
+{{--                                        <h4>--}}
+{{--                                            <span class="icon-right-arrow"></span> Join our Big--}}
+{{--                                            Family--}}
+{{--                                        </h4>--}}
+{{--                                        <p>--}}
+{{--                                            Nullam mollis elit quis dusto is lacinia efficitur--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="text-box3">--}}
+{{--                            <p>--}}
+{{--                                When an unknown printer took a galley of type and scrambled--}}
+{{--                                it to make a type specimen book. It has survived not only--}}
+{{--                                five centuries, but also the leap into electronic--}}
+{{--                                typesetting. Lorem Ipsum has been the ndustry standard dummy--}}
+{{--                                text ever since the 1500s.--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="text-box4">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-6">--}}
+{{--                                    <div class="content-box">--}}
+{{--                                        <h2>Service Benefits</h2>--}}
+{{--                                        <p>--}}
+{{--                                            Duis aute irure dolor in reprehenderit in voluptate--}}
+{{--                                            velit esse cillum.--}}
+{{--                                        </p>--}}
+
+{{--                                        <ul>--}}
+{{--                                            <li>--}}
+{{--                                                <span class="icon-checked"></span> In id diam nec--}}
+{{--                                                nisi congue tincidunt--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <span class="icon-checked"></span> Pn malesuada--}}
+{{--                                                purus a ligula dapibus--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <span class="icon-checked"></span> Vestibulum--}}
+{{--                                                tincidunt arcu vel nisl--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <span class="icon-checked"></span> Sed tristique--}}
+{{--                                                lorem non tesque--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                                <div class="col-xl-6">--}}
+{{--                                    <div class="img-box">--}}
+{{--                                        <img--}}
+{{--                                            src="assets/images/services/service-details-img2.jpg"--}}
+{{--                                            alt=""--}}
+{{--                                        />--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+
                     </div>
                 </div>
                 <!--End Service Details Content -->

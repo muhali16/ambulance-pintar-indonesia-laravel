@@ -49,6 +49,17 @@ body {
     font-family: var(--thm-font);
 }
 
+#notStyled {
+    width: 100%;
+}
+
+#notStyled img {
+    width: 50%;
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
 button:focus {
     outline: none;
 }

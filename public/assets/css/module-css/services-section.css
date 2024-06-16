@@ -1,4 +1,4 @@
-/*** 
+/***
 =============================================
     service Style1 Area Css
 =============================================
@@ -155,7 +155,7 @@
 
 
 
-/*** 
+/***
 =============================================
     service Style1 Area Css
 =============================================
@@ -163,14 +163,14 @@
 .service-page {
     position: relative;
     display: block;
-    padding: 120px 0 80px;
+    padding: 50px 0 80px;
     background: #ffffff;
     z-index: 10;
 }
 
 
 
-/*** 
+/***
 =============================================
     Service Details Area Css
 =============================================
@@ -276,7 +276,7 @@
     display: block;
     background: var(--thm-base);
     padding: 53px 50px 58px;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
     z-index: 1;
 }
 

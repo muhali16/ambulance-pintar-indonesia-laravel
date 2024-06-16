@@ -5,11 +5,11 @@
     <meta http-equiv="Content-language" content="ID" />
     <meta
         name="description"
-        content="PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation."
+        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
     />
     <meta
         name="keyword"
-        content="{{$article->tags ?? 'ambulance, buat ambulance, ambulance pintar, ambulance pintar indonesia, karoseri ambulance'}}"
+        content="{{(($article->tags ?? false) || ($product->name ?? false)) ?? 'ambulance, buat ambulance, ambulance pintar, ambulance pintar indonesia, karoseri ambulance'}}"
     />
     <meta
         name="robots"
@@ -23,26 +23,34 @@
         name="bingbot"
         content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
-    <meta name="title" content="PT Ambulance Pintar Indonesia" />
+    <meta name="title" content="{{$title ?? "No Title"}}" />
     <title>{{$title ?? "No Title"}}</title>
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="" />
     <meta property="og:title" content="{{$title ?? "No Title"}}" />
     <meta
         property="og:description"
-        content="PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation."
+        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
     />
-    <meta property="og:url" content="{{request()->getBaseUrl()}}" />
+    <meta property="og:url" content="{{request()->getUri()}}" />
     <meta property="og:site_name" content="Ambulance Pintar Indonesia" />
+    <meta
+        property="og:image"
+        content="{{asset('assets/images/resources/single-logo.png')}}"
+    />
     <!-- <meta property="og:image" content="" /> -->
     <meta name="dc.title" content="{{$title ?? "No Title"}}" />
     <meta
         name="dc.description"
-        content="PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation."
+        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
     />
-    <meta name="dc.relation" content="https://ambulancepintar.com" />
-    <meta name="dc.source" content="https://ambulancepintar.com" />
+    <meta name="dc.relation" content="{{request()->getBaseUrl()}}" />
+    <meta name="dc.source" content="{{request()->getBaseUrl()}}" />
     <meta name="dc.language" content="id_ID" />
+    <meta
+        property="dc.image"
+        content="{{asset('assets/images/resources/single-logo.png')}}"
+    />
     <!-- <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="PT. Ambulance Pintar Indonesia" />
     <meta
@@ -55,12 +63,12 @@
     <meta property="twitter:title" content="{{$title ?? "No Title"}}" />
     <meta
         property="twitter:description"
-        content="PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation."
+        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
     />
-    <!-- <meta
+    <meta
       property="twitter:image"
-      content="https://metatags.io/images/meta-tags.png"
-    /> -->
+      content="{{asset('assets/images/resources/single-logo.png')}}"
+    />
 
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -135,18 +143,18 @@
     <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="{{asset('assets/images/favicon/apple-touch-icon.png')}}"
+        href="{{asset('assets/images/resources/single-logo.png')}}"
     />
     <link
         rel="icon"
         type="image/png"
-        href="{{asset('assets/images/favicon/favicon-32x32.png')}}"
+        href="{{asset('assets/images/resources/single-logo.png')}}"
         sizes="32x32"
     />
     <link
         rel="icon"
         type="image/png"
-        href="{{asset('assets/images/favicon/favicon-16x16.png')}}"
+        href="{{asset('assets/images/resources/single-logo.png')}}"
         sizes="16x16"
     />
 </head>

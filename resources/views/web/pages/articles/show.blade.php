@@ -96,142 +96,129 @@
                                 <div class="post-social-share-links clearfix">
                                     <ul class="clearfix">
                                         <li>
-                                            <a href="mailto:azmbkhry@gmail.com" title="Email"
+                                            <a href="{{$contactEmail->link ?? "#"}}" title="Email"
                                             ><i class="fa-solid fa-envelope"></i
                                                 ></a>
                                         </li>
                                         <li>
-                                            <a href="tel:+6285893210906" title="Telepon"
+                                            <a href="{{$contactTelephone->link ?? "#"}}" title="Telepon"
                                             ><i class="fa-solid fa-phone-volume"></i
                                                 ></a>
                                         </li>
                                         <li>
-                                            <a href="https://wa.me/6285173110904" title="WhatsApp"
+                                            <a href="{{$contactWhatsapp->link ?? "#"}}" title="WhatsApp"
                                             ><i class="fa-brands fa-whatsapp"></i
                                                 ></a>
                                         </li>
                                         <li>
-                                            <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                                            <a href="{{$facebook->link ?? "#"}}" title="{{$facebook->body}}"
                                             ><i class="fa-brands fa-facebook"></i
                                                 ></a>
                                         </li>
                                         <li>
-                                            <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                                            <a href="{{$youtube1->link ?? "#"}}" title="{{$youtube1->body}}"><i class="fa-brands fa-youtube"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                                            <a href="{{$youtube2->link ?? "#"}}" title="{{$youtube2->body}}"><i class="fa-brands fa-youtube"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
-{{--                        <!-- Comment Box -->--}}
-{{--                        <div class="comment-box">--}}
-{{--                            <div class="inner-title">--}}
-{{--                                <h2>2 Comments</h2>--}}
-{{--                            </div>--}}
-{{--                            <div class="outer-box">--}}
-{{--                                <div class="row">--}}
-{{--                                    <div class="col-md-12">--}}
-{{--                                        <!--Start single comment-->--}}
-{{--                                        <div class="single-comment">--}}
-{{--                                            <div class="single-comment-box">--}}
-{{--                                                <div class="img-holder">--}}
-{{--                                                    <img src="{{asset('assets/images/blog/author-2.jpg')}}" alt="Awesome Image">--}}
-{{--                                                </div>--}}
-{{--                                                <div class="text-holder">--}}
-{{--                                                    <div class="top">--}}
-{{--                                                        <div class="name">--}}
-{{--                                                            <h3>Kevin Martin</h3>--}}
-{{--                                                            <p class="text-sm">From PT Sultan Ageng</p>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="text">--}}
-{{--                                                        <p>Lorem ipsum is simply free text used by copytyping--}}
-{{--                                                            refreshing. Neque porro est qui dolorem ipsum quia quaed--}}
-{{--                                                            inventore veritatis et quasi architecto beatae vitae--}}
-{{--                                                            dicta sunt explicabo porro est qui dolorem.</p>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="text-holder mt-4">--}}
-{{--                                                    <div class="top">--}}
-{{--                                                        <div class="name">--}}
-{{--                                                            <h6 class="mb-3"><i class="fa-solid fa-reply mr-2"></i>Reply</h6>--}}
-{{--                                                            <h3 class="text-sm">Admin</h3>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="text">--}}
-{{--                                                        <p>Lorem ipsum is simply free text used by copytyping--}}
-{{--                                                            refreshing. Neque porro est qui dolorem ipsum quia quaed--}}
-{{--                                                            inventore veritatis et quasi architecto beatae vitae--}}
-{{--                                                            dicta sunt explicabo porro est qui dolorem.</p>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <!--End single comment-->--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- End Comment Box -->--}}
-
-{{--                        <div class="add-comment-box">--}}
-{{--                            <div class="inner-title">--}}
-{{--                                <h2>Leave a Comment</h2>--}}
-{{--                            </div>--}}
-{{--                            <form id="add-comment-form" action="#">--}}
-{{--                                <div class="row">--}}
-{{--                                    <div class="col-md-12">--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-md-6">--}}
-{{--                                                <div class="input-box">--}}
-{{--                                                    <input--}}
-{{--                                                        type="text"--}}
-{{--                                                        name="fname"--}}
-{{--                                                        value=""--}}
-{{--                                                        placeholder="Your name"--}}
-{{--                                                        required=""--}}
-{{--                                                    />--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-md-6">--}}
-{{--                                                <div class="input-box">--}}
-{{--                                                    <input--}}
-{{--                                                        type="email"--}}
-{{--                                                        name="femail"--}}
-{{--                                                        value=""--}}
-{{--                                                        placeholder="Email address"--}}
-{{--                                                        required=""--}}
-{{--                                                    />--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-md-12">--}}
-{{--                                                <div class="input-box">--}}
-{{--                                                    <textarea--}}
-{{--                                                        name="fcomments"--}}
-{{--                                                        placeholder="Write message"--}}
-{{--                                                        required="true"--}}
-{{--                                                    ></textarea>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-md-12">--}}
-{{--                                                <div class="button-box">--}}
-{{--                                                    <button class="btn-one" type="submit">--}}
-{{--                                                        <span class="txt">Submit Comment</span>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
+                        <!-- Karoseri Section -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">AMBULANCE</h5>
+                                        <img src="assets/images/blog/blog-v1-4.jpg" alt="">
+                                        <br><br>
+                                        <div style="text-align: center">
+                                            <div class="btns-box mx-auto">
+                                                <a class="btn-one" href="all-product.html">
+                                                    <span class="txt">
+                                                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">NON AMBULANCE</h5>
+                                        <img src="assets/images/blog/blog-v1-4.jpg" alt="">
+                                        <br><br>
+                                        <div style="text-align: center">
+                                            <div class="btns-box mx-auto">
+                                                <a class="btn-one" href="non-ambulance-slide1.html">
+                                                    <span class="txt">Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Karoseri Section -->
+                        <div class="add-comment-box">
+                            <div class="inner-title">
+                                <h2>Leave a Comment</h2>
+                            </div>
+                            <form id="add-comment-form" action="#">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-box">
+                                                    <input
+                                                        type="text"
+                                                        name="fname"
+                                                        value=""
+                                                        placeholder="Your name"
+                                                        required=""
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-box">
+                                                    <input
+                                                        type="email"
+                                                        name="femail"
+                                                        value=""
+                                                        placeholder="Email address"
+                                                        required=""
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-box">
+                                                    <textarea
+                                                        name="fcomments"
+                                                        placeholder="Write message"
+                                                        required="true"
+                                                    ></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="button-box">
+                                                    <button class="btn-one" type="submit">
+                                                        <span class="txt">Submit Comment</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -248,11 +235,6 @@
                                     <li>
                                         <div class="inner">
                                             <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $article->thumbnail)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
-{{--                                                <img--}}
-{{--                                                    src="{{asset('storage/' . $article->thumbnail)}}"--}}
-{{--                                                    alt="Article Thumbnail"--}}
-{{--                                                    style="height: 100%"--}}
-{{--                                                />--}}
                                                 <div class="overlay-content">
                                                     <a href="{{route('articles.show', ['article' => $article->slug])}}"
                                                     ><i

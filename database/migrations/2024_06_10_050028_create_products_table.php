@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('brosure');
             $table->string('photo');
+            $table->string('caption');
+            $table->integer('views');
             $table->text('specification')->nullable();
             $table->tinyInteger('is_use_product_specification');
             $table->foreignUuid('product_category_id');

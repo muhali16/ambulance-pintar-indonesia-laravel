@@ -30,7 +30,7 @@ class ProductSpecificationResource extends Resource
                     ->maxLength(255)
                     ->required()
                     ->name("name"),
-                Forms\Components\RichEditor::make('specification')->disableToolbarButtons(['attachFiles', 'codeBlock', ])->required(),
+                Forms\Components\RichEditor::make('specification')->disableToolbarButtons(['codeBlock'])->required()->fileAttachmentsDisk('public')->fileAttachmentsDirectory('product-specification')->fileAttachmentsVisibility('private'),
             ])->columns(1);
     }
 
@@ -48,6 +48,8 @@ class ProductSpecificationResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

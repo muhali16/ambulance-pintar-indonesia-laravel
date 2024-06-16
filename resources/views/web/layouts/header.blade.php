@@ -6,12 +6,12 @@
             <div class="outer-box">
                 <div class="header-top__left">
                     <div class="main-logo-box">
-                        <a href="index.html">
+                        <a href="{{route('web.index')}}">
                             <img
                                 style="width: 16rem"
                                 src="{{asset('assets/images/resources/logo.png')}}"
                                 alt="Logo perusahaan"
-                                title="PT Ambulance Pintar Indonesia"
+                                title="{{$companyName->body ?? "PT Ambulance Pintar Indonesia"}}"
                             />
                         </a>
                     </div>
@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Telepon</p>
-                                    <h5><a href="tel:+6285893210906">+62 858 9321 0906</a></h5>
+                                    <h5><a href="{{$contactTelephone->link ?? '#'}}">{{$contactTelephone->body ?? "Set Phone Number"}}</a></h5>
                                 </div>
                             </li>
                             <li>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="text">
                                     <p>WhatsApp</p>
-                                    <h5><a href="https://wa.me/6285173110904">+62 851 7311 0904</a></h5>
+                                    <h5><a href="{{$contactWhatsapp->link ?? "#"}}">{{$contactWhatsapp->body ?? "Set WhatsApp Number"}}</a></h5>
                                 </div>
                             </li>
                             <li>
@@ -45,7 +45,7 @@
                                 <div class="text">
                                     <p>Email</p>
                                     <h5>
-                                        <a href="mailto:azmbkhry@gmail.com">azmbkhry@gmail.com</a>
+                                        <a href="{{$contactEmail->link ?? "#"}}">{{$contactEmail->body ?? "Set Email"}}</a>
                                     </h5>
                                 </div>
                             </li>
@@ -83,13 +83,9 @@
                                     <li class="dropdown">
                                         <a href="/#product">Produk</a>
                                         <ul>
-                                            <li><a href="javascript:void(0)">Karoseri</a></li>
-                                            <li><a href="javascript:void(0)">Modifikasi</a></li>
-                                            <li>
-                                                <a href="javascript:void(0)"
-                                                >Perawatan Ambulans</a
-                                                >
-                                            </li>
+                                            @foreach($activeProductCategory as $productCategory)
+                                            <li><a href="{{route('products.index', ['productCategory' => $productCategory->id])}}">{{$productCategory->name}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li><a href="/#testimonial">Testimoni</a></li>
@@ -110,16 +106,20 @@
                     <div class="header-social-link">
                         <ul class="clearfix">
                             <li>
-                                <a href="https://wa.me/6285173110904"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="{{$contactWhatsapp->link ?? "#"}}" title="WhatsApp"
+                                ><i class="fa-brands fa-whatsapp"></i
+                                    ></a>
                             </li>
                             <li>
-                                <a href="https://www.facebook.com/profile.php?id=61550623351891"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="{{$facebook->link ?? "#"}}" title="{{$facebook->body ?? "#"}}"
+                                ><i class="fa-brands fa-facebook"></i
+                                    ></a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="{{$youtube1->link ?? "#"}}" title="{{$youtube1->body ?? "#"}}"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="{{$youtube2->link ?? "#"}}" title="{{$youtube2->body ?? "#"}}"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -139,7 +139,7 @@
                     <a href="/" class="img-responsive">
                         <img
                             style="width: 16rem"
-                            src="{{asset('assets/images/resources/sticky-logo.png')}}"
+                            src="{{asset('assets/images/resources/logo.png')}}"
                             alt="Logo perusahaan"
                             title="PT Ambulance Pintar Indonesia"
                         />
@@ -179,30 +179,30 @@
             <div class="social-links">
                 <ul class="clearfix">
                     <li>
-                        <a href="mailto:azmbkhry@gmail.com" title="Email"
+                        <a href="{{$contactEmail->link ?? "#"}}" title="Email"
                         ><i class="fa-solid fa-envelope"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="tel:+6285893210906" title="Telepon"
+                        <a href="{{$contactTelephone->link ?? "#"}}" title="Telepon"
                         ><i class="fa-solid fa-phone-volume"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="https://wa.me/6285173110904" title="WhatsApp"
+                        <a href="{{$contactWhatsapp->link ?? "#"}}" title="WhatsApp"
                         ><i class="fa-brands fa-whatsapp"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/profile.php?id=61550623351891" title="Facebook"
+                        <a href="{{$facebook->link ?? "#"}}" title="{{$facebook->body ?? "Set Social Media"}}"
                         ><i class="fa-brands fa-facebook"></i
                             ></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/@ambulancepintarindonesia6897"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="{{$youtube1->link ?? "#"}}" title="{{$youtube1->body ?? "Set Social Media"}}"><i class="fa-brands fa-youtube"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/@1979imron"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="{{$youtube2->link ?? "#"}}" title="{{$youtube2->body ?? "Set Social Media"}}"><i class="fa-brands fa-youtube"></i></a>
                     </li>
                 </ul>
             </div>
