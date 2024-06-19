@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string("slug");
             $table->string("title");
             $table->string("thumbnail");
@@ -22,9 +22,12 @@ return new class extends Migration
             $table->integer("views");
             $table->text('body');
             $table->tinyInteger('is_publish');
-            $table->foreignUuid("user_id");
-            $table->foreignUuid("category_id");
+            $table->uuid("user_id");
+            $table->uuid("category_id");
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->restrictOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories')->restrictOnDelete();
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('testimonies', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('institution_name');
             $table->text('body');
             $table->string('thumbnail');

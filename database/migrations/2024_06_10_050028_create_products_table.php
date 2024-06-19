@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->tinyInteger('is_publish');
             $table->string('name');
             $table->string('brosure');
@@ -23,9 +23,11 @@ return new class extends Migration
             $table->integer('views');
             $table->text('specification')->nullable();
             $table->tinyInteger('is_use_product_specification');
-            $table->foreignUuid('product_category_id');
+            $table->uuid('product_category_id');
             $table->json('product_specification_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('product_category_id')->references('id')->on('product_categories')->restrictOnDelete();
         });
     }
 

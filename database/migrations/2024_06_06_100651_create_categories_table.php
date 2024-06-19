@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('company_clients', function (Blueprint $table) {
-            $table->uuid('id');
-            $table->string('name');
-            $table->string('logo');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string("name");
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company_clients');
+        Schema::dropIfExists('categories');
     }
 };

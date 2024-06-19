@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('company_information', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('body')->nullable();
             $table->string('link')->nullable();

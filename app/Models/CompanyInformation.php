@@ -10,6 +10,8 @@ class CompanyInformation extends Model
 {
     use HasFactory, HasUuids;
 
+    protected $table = 'company_information';
+
     protected $fillable = [
         'name',
         'body',

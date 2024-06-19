@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\HeroSliderConfig;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\Testimony;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -18,9 +19,10 @@ class WebController extends Controller
     {
         return view("web.pages.index", [
             'title' => 'Ambulance Pintar Indonesia',
-            'branchOffices' => BranchOffice::all(),
+            'branchOffices' => BranchOffice::orderBy('city_name')->get(),
             'popularArticles' => Article::popularArticlesInMonth()->get(),
             'latestArticles' => Article::latestArticles()->get(),
+            'productCategories' => ProductCategory::all(),
             'ambulances' => Product::bestAmbulanceProducts()->get(),
             'nonAmbulances' => Product::bestNonAmbulanceProducts()->get(),
             'heroSliders' => HeroSliderConfig::all(),

@@ -158,10 +158,10 @@
                                     ></a>
                             </li>
                             <li>
-                                <a href="{{$youtube1->link ?? "#"}}" title="{{$youtube1->body}}"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="{{$youtube1->link ?? "#"}}" title="{{$youtube1->body ?? "Set Youtube 1"}}"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                             <li>
-                                <a href="{{$youtube2->link ?? "#"}}" title="{{$youtube2->body}}"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="{{$youtube2->link ?? "#"}}" title="{{$youtube2->body ?? "Set Youtube 2"}}"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -221,10 +221,10 @@
         <i class="fa-solid fa-hashtag"></i>
     </span>
     <div class="dropdown-menu" style="color: #990000">
-        <a class="dropdown-item" href="{{$contactEmail->link}}"><i class="fa-solid fa-envelope"></i></a>
-        <a class="dropdown-item" href="{{$contactWhatsapp->link}}"><i class="fa-brands fa-whatsapp"></i></a>
-        <a class="dropdown-item" href="{{$facebook->link}}"><i class="fa-brands fa-facebook"></i></a>
-        <a class="dropdown-item" href="{{$youtube1->link}}"><i class="fa-brands fa-youtube"></i></a>
-        <a class="dropdown-item" href="{{$youtube2->link}}"><i class="fa-brands fa-youtube"></i></a>
+        <a class="dropdown-item" href="{{$contactEmail->link ?? "#"}}"><i class="fa-solid fa-envelope"></i></a>
+        <a class="dropdown-item" href="{{$contactWhatsapp->link ?? "#"}}"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="dropdown-item" href="{{$facebook->link ?? "#"}}"><i class="fa-brands fa-facebook"></i></a>
+        <a class="dropdown-item" href="{{$youtube1->link ?? "#"}}"><i class="fa-brands fa-youtube"></i></a>
+        <a class="dropdown-item" href="{{$youtube2->link ?? "#"}}"><i class="fa-brands fa-youtube"></i></a>
     </div>
 </div>

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('hero_slider_configs', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('thumbnail');
             $table->string('caption');
             $table->timestamps();
