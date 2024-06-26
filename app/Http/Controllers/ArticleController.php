@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class ArticleController extends Controller
 {
@@ -16,7 +17,12 @@ class ArticleController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Articles | Ambulance Pintar Indonesia',
+            'SEOData' => new SEOData(
+                title: 'Articles',
+                description: 'Halaman kumpulan artikel yang dipublikasi oleh PT Ambulance Pintar Indonesia.',
+                type: 'article',
+                locale: 'id',
+            ),
         ];
         $data['articles'] = Article::latestArticles()->filter()->paginate(9)->withQueryString();
         if(isset(\request()->category)) {
@@ -57,7 +63,17 @@ class ArticleController extends Controller
     {
         $article->increment('views');
         return view("web.pages.articles.show", [
-            'title' => "$article->title | Ambulance Pintar Indonesia",
+            'SEOData' => new SEOData(
+                title: "$article->title",
+                description: str($article->body)->limit(100)->substr(3),
+                author: "Ambulance Pintar Indonesia",
+                image: asset('storage/' . $article->thumbnail),
+                published_time: $article->created_at,
+                section: $article->category->name,
+                tags: explode(',', $article->tags),
+                type: 'article',
+                locale: 'id',
+            ),
             'article' => $article,
             'popularArticlesInMonth' => Article::popularArticlesInMonth()->get(),
             'latestArticles' => Article::latestArticles()->get(),

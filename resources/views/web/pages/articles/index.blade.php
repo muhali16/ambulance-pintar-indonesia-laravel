@@ -24,7 +24,7 @@
             style="
             width: 1920px;
             height: 400px;
-            background-image: url({{asset('assets/images/breadcrumb/breadcrumb-2.jpg')}});
+            background-image: url({{asset('assets/images/resources/api3.webp')}});
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover

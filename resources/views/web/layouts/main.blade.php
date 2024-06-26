@@ -4,14 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="Content-language" content="ID" />
     <meta
-        name="description"
-        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
-    />
-    <meta
-        name="keyword"
-        content="{{(($article->tags ?? false) || ($product->name ?? false)) ?? 'ambulance, buat ambulance, ambulance pintar, ambulance pintar indonesia, karoseri ambulance'}}"
-    />
-    <meta
         name="robots"
         content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
@@ -23,52 +15,8 @@
         name="bingbot"
         content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
-    <meta name="title" content="{{$title ?? "No Title"}}" />
-    <title>{{$title ?? "No Title"}}</title>
-    <meta property="og:locale" content="id_ID" />
-    <meta property="og:type" content="" />
-    <meta property="og:title" content="{{$title ?? "No Title"}}" />
-    <meta
-        property="og:description"
-        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
-    />
-    <meta property="og:url" content="{{request()->getUri()}}" />
-    <meta property="og:site_name" content="Ambulance Pintar Indonesia" />
-    <meta
-        property="og:image"
-        content="{{asset('assets/images/resources/single-logo.png')}}"
-    />
-    <!-- <meta property="og:image" content="" /> -->
-    <meta name="dc.title" content="{{$title ?? "No Title"}}" />
-    <meta
-        name="dc.description"
-        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
-    />
-    <meta name="dc.relation" content="{{request()->getBaseUrl()}}" />
-    <meta name="dc.source" content="{{request()->getBaseUrl()}}" />
-    <meta name="dc.language" content="id_ID" />
-    <meta
-        property="dc.image"
-        content="{{asset('assets/images/resources/single-logo.png')}}"
-    />
-    <!-- <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="PT. Ambulance Pintar Indonesia" />
-    <meta
-      name="twitter:description"
-      content="Ambulance Pintar Indonesia Karoseri dan modifikasi mobil ambulance untuk segala jenis mobil. Harga murah dan SKRB lengkap."
-    /> -->
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="{{request()->getUri()}}" />
-    <meta property="twitter:title" content="{{$title ?? "No Title"}}" />
-    <meta
-        property="twitter:description"
-        content="{{$product->caption ?? 'PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.'}}"
-    />
-    <meta
-      property="twitter:image"
-      content="{{asset('assets/images/resources/single-logo.png')}}"
-    />
+
+    {!! seo($SEOData ?? null) !!}
 
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -89,14 +37,13 @@
         rel="stylesheet"
     />
 
+
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/aos.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/custom-animate.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/fancybox.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/imp.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/jquery.bootstrap-touchspin.css')}}" />
@@ -143,20 +90,23 @@
     <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="{{asset('assets/images/resources/single-logo.png')}}"
+        href="{{asset('assets/images/resources/single-logo.webp')}}"
     />
     <link
         rel="icon"
         type="image/png"
-        href="{{asset('assets/images/resources/single-logo.png')}}"
+        href="{{asset('assets/images/resources/single-logo.webp')}}"
         sizes="32x32"
     />
     <link
         rel="icon"
         type="image/png"
-        href="{{asset('assets/images/resources/single-logo.png')}}"
+        href="{{asset('assets/images/resources/single-logo.webp')}}"
         sizes="16x16"
     />
+
+    <script defer src="{{mix('js/aos.js')}}"></script>
+    <script defer src="{{mix('js/app.js')}}"></script>
 </head>
 <body>
 <div class="boxed_wrapper ltr">
@@ -164,8 +114,8 @@
 </div>
 
 <script src="{{asset('assets/js/jquery.js')}}"></script>
-<script src="{{asset('assets/js/aos.js')}}"></script>
-<script src="{{asset('assets/js/font-awesome.js')}}"></script>
+{{--<script src="{{asset('assets/js/aos.js')}}"></script>--}}
+{{--<script src="{{asset('assets/js/font-awesome.js')}}"></script>--}}
 <script src="{{asset('assets/js/appear.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/isotope.js')}}"></script>

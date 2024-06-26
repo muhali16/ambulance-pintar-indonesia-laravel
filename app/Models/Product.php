@@ -59,7 +59,7 @@ class Product extends Model
     {
         return $query->where('is_publish', 1)->whereHas('productCategory', function ($query){
             return $query->whereNot('name', 'Ambulance');
-        })->orderBy('views', 'desc')->limit(6);
+        })->orderBy('views', 'desc')->limit(3);
     }
 
     public function scopeFilter($query)

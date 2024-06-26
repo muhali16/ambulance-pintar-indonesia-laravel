@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Article;
 use App\Models\CompanyInformation;
 use App\Models\ProductCategory;
+use App\Models\WebView;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -30,6 +31,7 @@ class ViewServiceProvider extends ServiceProvider
         $companyInformation = CompanyInformation::all();
 //        dd($companyInformation);
         View::share('activeProductCategory', ProductCategory::activeProductCategory()->get());
+        View::share('webViews', WebView::where('page_name', 'landing_page')->first());
         View::share('companyName', $companyInformation->where('name', 'company-name')->first());
         View::share('contactTelephone', $companyInformation->where('name', 'contact-telephone')->first());
         View::share('contactEmail', $companyInformation->where('name', 'contact-email')->first());

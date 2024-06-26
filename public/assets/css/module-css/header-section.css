@@ -1,5 +1,5 @@
 /*==============================================
-    Main Header Css        
+    Main Header Css
 ===============================================*/
 .main-header {
     position: absolute;
@@ -357,9 +357,9 @@
 
 .main-menu .navigation>li.dropdown>a:after {
     position: absolute;
-    right: 0px;
-    font-family: Fontawesome;
-    content: "\f107";
+    right: -10px;
+    font-family: "Font Awesome\ 6 Free";
+    content: "\f13a";
     font-size: 16px;
     font-weight: 600;
     transition: all 200ms linear;
@@ -852,7 +852,7 @@
 
 
 /*==============================================
-    Main Header Style2 Css        
+    Main Header Style2 Css
 ===============================================*/
 .header-style-two {
     position: relative;

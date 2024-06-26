@@ -7,13 +7,20 @@ use App\Models\ProductCategory;
 use App\Models\ProductSpecification;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class ProductController extends Controller
 {
     public function index(ProductCategory $productCategory): View
     {
         return view('web.pages.products.index', [
-            'title' => "$productCategory->name | Ambulance Pintar Indonesia",
+            'SEOData' => new SEOData(
+                title: $productCategory->name,
+                description: 'Halaman kumpulan produk dari PT Ambulance Pintar Indonesia dengan kategori ' . $productCategory->name,
+                image: asset('assets/image/resources/logo.webp'),
+                type: 'website',
+                locale: 'id',
+            ),
             'productCategory' => $productCategory,
             'products' => $productCategory->products()->activeProducts()->get(),
             'bestProducts' => Product::bestProducts()->get(),
@@ -24,11 +31,19 @@ class ProductController extends Controller
     {
         $product->increment('views');
         return view('web.pages.products.show', [
-            'title' => "$product->name | Ambulance Pintar Indonesia",
+            'SEOData' => new SEOData(
+                title: $product->name,
+                description: $product->caption,
+                image: asset('storage/' . $product->photo),
+                section: 'Produk Ambulance',
+                tags: ['ambulance', 'buat ambulance', 'ambulance terbaru', 'karoseri ambulance', 'ambulance pintar indonesia'],
+                type: 'article',
+                locale: 'id',
+            ),
             'productDetail' => $product,
             'productCategories' => ProductSpecification::when($product->product_specification_id ?? false, function ($query) use ($product) {
                 return $query->whereIn('id', $product->product_specification_id);
-            })->get(),
+            })->orderBy('name')->get(),
             'bestProducts' => Product::bestProducts()->get(),
         ]);
     }

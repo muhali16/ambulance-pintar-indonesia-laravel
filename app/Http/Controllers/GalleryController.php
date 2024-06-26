@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class GalleryController extends Controller
 {
@@ -15,7 +16,13 @@ class GalleryController extends Controller
     public function index()
     {
         return view("web.pages.galleries.index", [
-            'title' => "Galeri | Ambulance Pintar Indonesia",
+            'SEOData' => new SEOData(
+                title: 'Gallery',
+                description: 'Halaman kumpulan foto dari PT Ambulance Pintar Indonesia',
+                image: asset('assets/image/resources/logo.webp'),
+                type: 'website',
+                locale: 'id',
+            ),
             'photos' => Gallery::latest()->get(),
         ]);
     }

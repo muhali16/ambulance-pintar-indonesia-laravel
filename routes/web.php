@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", [\App\Http\Controllers\WebController::class, 'index'])->name('web.index');
 Route::get("/search", [\App\Http\Controllers\WebController::class, 'search'])->name('web.search');
 Route::get('/about', [\App\Http\Controllers\WebController::class, 'about'])->name('web.about');
+Route::get('/web/sitemap.xml', [\App\Http\Controllers\WebController::class, 'sitemap'])->name('web.sitemap');
 
 Route::prefix('/products')
     ->controller(\App\Http\Controllers\ProductController::class)->group(function (){

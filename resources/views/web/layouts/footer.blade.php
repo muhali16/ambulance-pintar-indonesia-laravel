@@ -3,7 +3,7 @@
     <footer class="footer-area">
         <div
             class="footer-area-shape float-bob"
-            style="background-image: url({{asset('assets/images/shape/shape-2.png')}})"
+            style="background-image: url({{asset('assets/images/shape/shape-2.webp')}})"
         ></div>
         <!--Start Footer-->
         <div class="footer">
@@ -17,18 +17,18 @@
                                     <a href="{{route('web.index')}}">
                                         <img
                                             style="width: 30rem"
-                                            src="{{asset('assets/images/resources/logo.png')}}"
+                                            src="{{asset('assets/images/resources/logo.webp')}}"
                                             alt="Logo perusahaan"
                                             title="PT Ambulance Pintar Indonesia"
                                         />
                                     </a>
                                 </div>
-                                <div class="text-box">
-                                    <p>
-                                        Spesialis ambulance, ambulance care, modifikasi, 4x4
-                                        system, rental, equipment dan donation.
-                                    </p>
-                                </div>
+{{--                                <div class="text-box">--}}
+{{--                                    <p>--}}
+{{--                                        Spesialis ambulance, ambulance care, modifikasi, 4x4--}}
+{{--                                        system, rental, equipment dan donation.--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
                                 <div class="footer-widget-contact-info mt-4">
                                     <ul>
                                         <li>
@@ -124,7 +124,10 @@
                                     referrerpolicy="no-referrer-when-downgrade"
                                 ></iframe>
                             </div>
-
+                        </div>
+                        <div class="d-flex flex-column p-3 mt-3 justify-content-center">
+                            <h5>Pengunjung</h5>
+                            <p><i class="fa-solid fa-eye mr-2"></i>{{$webViews->views}} Orang</p>
                         </div>
                     </div>
                     <!--End single footer widget-->

@@ -9,7 +9,7 @@
                         <a href="{{route('web.index')}}">
                             <img
                                 style="width: 16rem"
-                                src="{{asset('assets/images/resources/logo.png')}}"
+                                src="{{asset('assets/images/resources/logo.webp')}}"
                                 alt="Logo perusahaan"
                                 title="{{$companyName->body ?? "PT Ambulance Pintar Indonesia"}}"
                             />
@@ -139,7 +139,7 @@
                     <a href="/" class="img-responsive">
                         <img
                             style="width: 16rem"
-                            src="{{asset('assets/images/resources/logo.png')}}"
+                            src="{{asset('assets/images/resources/logo.webp')}}"
                             alt="Logo perusahaan"
                             title="PT Ambulance Pintar Indonesia"
                         />
@@ -167,7 +167,7 @@
             <div class="nav-logo">
                 <a href="/"
                 ><img
-                        src="{{asset('assets/images/resources/logo.png')}}"
+                        src="{{asset('assets/images/resources/logo.webp')}}"
                         alt="Logo perusahaan"
                         title="PT Ambulance Pintar Indonesia"
                     /></a>

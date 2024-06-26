@@ -10,19 +10,25 @@ use App\Models\HeroSliderConfig;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Testimony;
+use App\Models\WebView;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class WebController extends Controller
 {
     public function index(): View
     {
+        WebView::increment('views');
         return view("web.pages.index", [
-            'title' => 'Ambulance Pintar Indonesia',
+            'SEOData' => new SEOData(
+                description: "PT Ambulance Pintar Indonesia adalah perusahaan yang bergerak di bidang spesialis ambulance, ambulance care, modifikasi, 4x4 system, rental, equipment dan donation.",
+                image: asset("assets/images/resources/logo.webp"),
+                type: 'website',
+                locale: 'id'
+            ),
             'branchOffices' => BranchOffice::orderBy('city_name')->get(),
-            'popularArticles' => Article::popularArticlesInMonth()->get(),
-            'latestArticles' => Article::latestArticles()->get(),
-            'productCategories' => ProductCategory::all(),
+            'popularArticles' => Article::latestArticles()->get(),
             'ambulances' => Product::bestAmbulanceProducts()->get(),
             'nonAmbulances' => Product::bestNonAmbulanceProducts()->get(),
             'heroSliders' => HeroSliderConfig::all(),
@@ -34,7 +40,9 @@ class WebController extends Controller
     public function search(Request $request): View
     {
         return view('web.pages.search.index', [
-            'title' => "Search: $request->search | Ambulance Pintar Indonesia",
+            'SEOData' => new SEOData(
+                title: "Seach: $request->search", description: "Hasil pencarian untuk $request->search di produk ambulance dan artikel.", locale: 'id'
+            ),
             'articles' => Article::filter()->paginate(6),
             'products' => Product::filter()->paginate(6),
         ]);
@@ -48,5 +56,16 @@ class WebController extends Controller
             'latestArticles' => Article::latestArticles()->get(),
             'categories' => Category::latest()->get(),
         ]);
+    }
+
+    public function sitemap()
+    {
+        $productCategories = ProductCategory::all();
+        $products = Product::all();
+        $articles = Article::all();
+
+        return response()
+            ->view('web.sitemap', compact('productCategories', 'products', 'articles'))
+            ->header('Content-Type', 'text/xml');
     }
 }

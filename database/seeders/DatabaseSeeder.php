@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\CompanyInformation;
 use App\Models\ProductCategory;
 use App\Models\ProductSpecification;
+use App\Models\WebView;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -189,5 +190,9 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+        WebView::insert([
+            'page_name' => 'landing_page',
+            'views' => 2183 // initial count
+        ]);
     }
 }
