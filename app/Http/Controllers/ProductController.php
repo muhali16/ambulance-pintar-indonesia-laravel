@@ -36,7 +36,7 @@ class ProductController extends Controller
                 description: $product->caption,
                 image: asset('storage/' . $product->photo),
                 section: 'Produk Ambulance',
-                tags: ['ambulance', 'buat ambulance', 'ambulance terbaru', 'karoseri ambulance', 'ambulance pintar indonesia'],
+                tags: ['ambulance', 'buat ambulance', 'ambulance terbaru', 'karoseri ambulance', 'ambulance pintar indonesia', $product->name],
                 type: 'article',
                 locale: 'id',
             ),
@@ -44,7 +44,8 @@ class ProductController extends Controller
             'productCategories' => ProductSpecification::when($product->product_specification_id ?? false, function ($query) use ($product) {
                 return $query->whereIn('id', $product->product_specification_id);
             })->orderBy('tier')->get(),
-            'bestProducts' => Product::bestProducts()->get(),
+            'bestAmbulanceProducts' => Product::bestAmbulanceProducts()->limit(3)->get(),
+            'bestNonAmbulaceProducts' => Product::bestNonAmbulanceProducts()->limit(3)->get(),
         ]);
     }
 }

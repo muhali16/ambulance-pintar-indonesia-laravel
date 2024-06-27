@@ -568,7 +568,7 @@
                                         <iframe
                                             class="mt-3"
                                             style="width: 100%; height: 30rem"
-                                            src="https://www.youtube.com/embed/Qu6jI9auRJQ?si=MhPGqSbykrFmof_g&amp;controls=0"
+                                            src="https://www.youtube.com/embed/jhEYa0OSRzk?si=MhPGqSbykrFmof_g&amp;controls=0"
                                             title="Company Profile PT Ambulance Pintar Indonesia"
                                             frameborder="1"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -587,7 +587,7 @@
                                         <iframe
                                             class="mt-3"
                                             style="width: 100%; height: 30rem"
-                                            src="https://www.youtube.com/embed/elIjp0YQjsk?si=MhPGqSbykrFmof_g&amp;controls=0"
+                                            src="https://www.youtube.com/embed/q1aYq-HWhqE?si=MhPGqSbykrFmof_g&amp;controls=0"
                                             title="Company Profile PT Ambulance Pintar Indonesia"
                                             frameborder="1"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -621,7 +621,7 @@
             <div class="row">
                 @forelse($popularArticles as $article)
                 <!--Start Single Blog Style1-->
-                <div class="col-xl-4 col-lg-4">
+                <div class="col-xl-4 col-lg-4 col-md-6">
                     <div
                         class="single-blog-style1"
                         data-aos="fade-down"

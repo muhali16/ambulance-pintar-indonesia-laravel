@@ -31,18 +31,19 @@
                 <!--Start Service Details Sidebar -->
                 <div class="col-xl-4 col-lg-5 order-box-2">
                     <div class="service-details__sidebar">
+
                         <div class="single-sidebar-box">
                             <div class="sidebar-title">
                                 <h3>Produk Terbaik</h3>
                             </div>
                             <div class="sidebar-blog-post">
                                 <ul class="blog-post">
-                                    @foreach($bestProducts as $product)
+                                    @foreach($bestAmbulanceProducts as $productA)
                                         <li>
                                             <div class="inner">
-                                                <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $product->photo)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
+                                                <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $productA->photo)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
                                                     <div class="overlay-content">
-                                                        <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
+                                                        <a href="{{route('products.show', ['productCategory' => $productA->product_category_id, 'product' => $productA->id])}}"
                                                         ><i
                                                                 class="fa-solid fa-link"
                                                                 aria-hidden="true"
@@ -52,12 +53,48 @@
                                                 </div>
                                                 <div class="title-box">
                                                     <h4>
-                                                        <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
-                                                        >{{$product->name}}</a
+                                                        <a href="{{route('products.show', ['productCategory' => $productA->product_category_id, 'product' => $productA->id])}}"
+                                                        >{{$productA->name}}</a
                                                         >
                                                     </h4>
                                                     <div class="admin pt-2">
-                                                        <p>{{$product->caption}}</p>
+                                                        <p>{{$productA->caption}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="single-sidebar-box mt-3">
+                            <div class="sidebar-title">
+                                <h3>Non Ambulance</h3>
+                            </div>
+                            <div class="sidebar-blog-post">
+                                <ul class="blog-post">
+                                    @foreach($bestNonAmbulaceProducts as $productNA)
+                                        <li>
+                                            <div class="inner">
+                                                <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $productNA->photo)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
+                                                    <div class="overlay-content">
+                                                        <a href="{{route('products.show', ['productCategory' => $productNA->product_category_id, 'product' => $productNA->id])}}"
+                                                        ><i
+                                                                class="fa-solid fa-link"
+                                                                aria-hidden="true"
+                                                            ></i
+                                                            ></a>
+                                                    </div>
+                                                </div>
+                                                <div class="title-box">
+                                                    <h4>
+                                                        <a href="{{route('products.show', ['productCategory' => $productNA->product_category_id, 'product' => $productNA->id])}}"
+                                                        >{{$productNA->name}}</a
+                                                        >
+                                                    </h4>
+                                                    <div class="admin pt-2">
+                                                        <p>{{$productNA->caption}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,11 +127,12 @@
                                         <span class="icon-checked-1"></span>
                                     </div>
                                     <div class="title">
-                                        <h5><a href="{{$product->brosure}}">Download Brosur Produk</a></h5>
+                                        <h5><a href="{{$productDetail->brosure}}">Download Brosur Produk</a></h5>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
                 <!--End Service Details Sidebar -->

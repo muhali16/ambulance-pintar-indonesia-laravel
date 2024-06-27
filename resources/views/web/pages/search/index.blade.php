@@ -3,16 +3,14 @@
     @include("web.layouts.preloader")
     @include("web.layouts.header")
     <!-- Search Box Section -->
-    <section>
-        <div class="sidebar-search-box" style="padding-top: 6rem">
-            <form class="search-form" action="{{route('web.search')}}" method="get">
-                <input placeholder="Cari Ambulans" name="search" type="text" value="{{request()->search ?? ""}}"/>
-                <button type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
-    </section>
+    <div class="sidebar-search-box">
+        <form class="search-form container" action="{{route('web.search')}}" method="get">
+            <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ""}}" type="text" />
+            <button type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
     <!-- End Search Box Section -->
 
     <!--Start Blog Page Two-->

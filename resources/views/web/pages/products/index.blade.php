@@ -3,16 +3,14 @@
     @include("web.layouts.preloader")
     @include("web.layouts.header")
     <!-- Search Box Section -->
-    <section>
-        <div class="sidebar-search-box" style="padding-top: 6rem">
-            <form class="search-form container" action="{{route('web.search')}}" method="get">
-                <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ''}}" type="text" />
-                <button type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
-    </section>
+    <div class="sidebar-search-box">
+        <form class="search-form container" action="{{route('web.search')}}" method="get">
+            <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ""}}" type="text" />
+            <button type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
     <!-- End Search Box Section -->
 
     @if($productCategory->name === "Ambulance")
@@ -33,8 +31,7 @@
                         </div>
                         <div class="text">
                             <p>
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur.
+                                Rancangan Handal, Penyelamatan Maksimal: Layanan Ambulans Unggulan.
                             </p>
                         </div>
                         <div class="blog-style2-custom-nav">
