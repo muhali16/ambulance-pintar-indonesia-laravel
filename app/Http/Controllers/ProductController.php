@@ -43,7 +43,7 @@ class ProductController extends Controller
             'productDetail' => $product,
             'productCategories' => ProductSpecification::when($product->product_specification_id ?? false, function ($query) use ($product) {
                 return $query->whereIn('id', $product->product_specification_id);
-            })->orderBy('name')->get(),
+            })->orderBy('tier')->get(),
             'bestProducts' => Product::bestProducts()->get(),
         ]);
     }

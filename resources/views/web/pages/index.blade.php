@@ -558,7 +558,7 @@
                             <div class="sub-title">
                                 <h3></h3>
                             </div>
-                            <h2 style="letter-spacing: 10px">COMPANNY PROFILE</h2>
+                            <h2 style="letter-spacing: 10px">COMPANY PROFILE</h2>
                         </div>
                         <!-- Start yotube 1 -->
                         <div class="row">

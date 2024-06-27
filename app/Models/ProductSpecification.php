@@ -12,6 +12,11 @@ class ProductSpecification extends Model
 
     protected $fillable = [
         'name',
-        'specification'
+        'specification',
+        'tier',
+    ];
+
+    protected $attributes = [
+        'tier' => 1,
     ];
 }

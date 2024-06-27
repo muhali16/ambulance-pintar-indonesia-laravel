@@ -30,6 +30,9 @@ class ProductSpecificationResource extends Resource
                     ->maxLength(255)
                     ->required()
                     ->name("name"),
+                Forms\Components\TextInput::make('tier')
+                    ->required()
+                    ->name("tier"),
                 Forms\Components\RichEditor::make('specification')->disableToolbarButtons(['codeBlock'])->required()->fileAttachmentsDisk('public')->fileAttachmentsDirectory('product-specification')->fileAttachmentsVisibility('private'),
             ])->columns(1);
     }
@@ -39,6 +42,7 @@ class ProductSpecificationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('tier')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('created_at')->since()->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')->since()->sortable(),
 
