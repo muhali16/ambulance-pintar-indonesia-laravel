@@ -45,10 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-//    public function canAccessPanel(Panel $panel): bool
-//    {
-//        return true;
-//    }
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
 
     public function articles(): HasMany
     {
