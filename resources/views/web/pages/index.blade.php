@@ -129,68 +129,6 @@
     </section>
     <!--End Features Style1 Area-->
 
-{{--    @forelse($productCategories as $category)--}}
-{{--    <!--Start Ambulance Style1 Area-->--}}
-{{--    <section id="product" class="service-style1-area">--}}
-{{--        <div class="container">--}}
-{{--            <div class="sec-title text-center">--}}
-{{--                <div class="icon">--}}
-{{--                    <span class="icon-heartbeat"></span>--}}
-{{--                </div>--}}
-{{--                <div class="text-center">--}}
-{{--                    <img class="rounded mx-auto d-block my-3" style="width: 30rem" src="{{asset('assets/images/resources/ecatalogue.webp')}}" alt="LKPP E-Catalogue Logo">--}}
-{{--                </div>--}}
-{{--                <div class="sub-title">--}}
-{{--                    <h3>Produk ambulans dan lainnya sudah tersedia di LKPP E-Catalogue.</h3>--}}
-{{--                </div>--}}
-{{--                <h2 style="letter-spacing: 10px">{{$category->name}}</h2>--}}
-{{--            </div>--}}
-{{--            <div class="row">--}}
-{{--                @forelse($category->products()->where('is_publish', 1)->limit(3)->get() as $product)--}}
-{{--                <!--Start Single Service Style1-->--}}
-{{--                <div class="col-xl-4 col-lg-4">--}}
-{{--                    <div--}}
-{{--                        class="single-service-style1 wow fadeInUp"--}}
-{{--                        data-wow-delay="100ms"--}}
-{{--                        data-wow-duration="1500ms"--}}
-{{--                    >--}}
-{{--                        <div class="img-holder">--}}
-{{--                            <img src="{{asset('storage/' . $product->photo)}}" alt="{{$product->name}}" />--}}
-{{--                        </div>--}}
-{{--                        <div class="text-holder">--}}
-{{--                            <h3><a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a></h3>--}}
-{{--                            <p>{{$product->caption}}</p>--}}
-{{--                            <div class="btn-box">--}}
-{{--                                <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"--}}
-{{--                                >Lihat Lebih Detail <span class="icon-right-arrow"></span--}}
-{{--                                    ></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!--End Single Service Style1-->--}}
-{{--                @empty--}}
-{{--                    <div class="row container pt-5" style="min-height: 100%">--}}
-{{--                        <h3 style="width: 100%" class="text-secondary text-center">Belum Produk Ambulans dan Lainnya</h3>--}}
-{{--                    </div>--}}
-{{--                @endforelse--}}
-{{--            </div>--}}
-{{--            <div style="text-align: center">--}}
-{{--                <div class="btns-box mx-auto">--}}
-{{--                    <a class="btn-one" href="{{route('products.index', ['productCategory' => $category->id])}}">--}}
-{{--                <span class="txt">--}}
-{{--                  Temukan Lebih Banyak<i class="icon-refresh arrow"></i>--}}
-{{--                </span>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-{{--    <!--End Ambulance Style1 Area-->--}}
-{{--    @empty--}}
-{{--        <h1>Set Product Category First!</h1>--}}
-{{--    @endforelse--}}
-
     <!--Start Non Ambulance Style1 Area-->
     <section class="service-style1-area">
         <div class="container">
@@ -514,7 +452,7 @@
                 <div class="icon">
                     <span class="icon-heartbeat"></span>
                 </div>
-                <h2 style="letter-spacing: 10px">GALLERY</h2>
+                <h2 style="letter-spacing: 10px">GALERI</h2>
             </div>
 
             <div class="row">
@@ -683,10 +621,17 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="video-gallery-style1__content">
-                        <h2>
-                            Kerja Sama API X BAZNAS YOUTUBE,<br />
-                            Lihat Lebih Dekat.
-                        </h2>
+                        <div class="sec-title text-center">
+                            <div class="icon">
+                                <span class="icon-heartbeat"></span>
+                            </div>
+                            <div class="sub-title">
+                                <h3>YOUTUBE</h3>
+                            </div>
+                            <h2 style="letter-spacing: 10px">AMBULANCE PINTAR INDONESIA</h2>
+                            <h2 style="letter-spacing: 10px">X</h2>
+                            <h2 style="letter-spacing: 10px">BAZNAS</h2>
+                        </div>
                         <iframe
                             class="mt-3"
                             style="width: 100%; height: 30rem"

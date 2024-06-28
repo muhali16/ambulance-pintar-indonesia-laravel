@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
@@ -79,6 +80,8 @@ class ArticleController extends Controller
             'latestArticles' => Article::latestArticles()->get(),
             'tags' => str($article->tags)->explode(','),
             'categories' => Category::latest()->limit(6)->get(),
+            'bestAmbulanceProducts' => Product::bestAmbulanceProducts()->limit(3)->get(),
+            'bestNonAmbulaceProducts' => Product::bestNonAmbulanceProducts()->limit(3)->get(),
         ]);
     }
 

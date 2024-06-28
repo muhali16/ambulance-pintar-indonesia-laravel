@@ -51,10 +51,21 @@ class WebController extends Controller
     public function about(): View
     {
         return view('web.pages.about', [
-            'title' => 'Tentang Ambulance Pintar Indonesia',
+            'SEOData' => new SEOData(
+                title: "Tentang PT Ambulance Pintar Indonesia",
+                description: "PT. Ambulance Pintar Indonesia (API) adalah salah satu pelopor dalam industri karoseri ambulance di Indonesia. Didirikan dengan visi untuk meningkatkan standar layanan kesehatan di Indonesia, perusahaan ini telah mengalami perjalanan yang mengesankan sejak awal berdirinya hingga menjadi salah satu penyedia ambulance terkemuka di Indonesia.",
+                author: "Ambulance Pintar Indonesia",
+                image: asset('assets/images/blog/gedung-1.jpg'),
+                section: "Sejarah",
+                tags: ['Sejarah', 'Ambulance', 'Ambulance Pintar Indonesia', 'Karoseri Ambulance'],
+                type: 'article',
+                locale: 'id',
+            ),
             'popularArticlesInMonth' => Article::popularArticlesInMonth()->get(),
             'latestArticles' => Article::latestArticles()->get(),
             'categories' => Category::latest()->get(),
+            'bestAmbulanceProducts' => Product::bestAmbulanceProducts()->limit(3)->get(),
+            'bestNonAmbulaceProducts' => Product::bestNonAmbulanceProducts()->limit(3)->get(),
         ]);
     }
 

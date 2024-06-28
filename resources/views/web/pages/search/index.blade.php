@@ -5,7 +5,7 @@
     <!-- Search Box Section -->
     <div class="sidebar-search-box">
         <form class="search-form container" action="{{route('web.search')}}" method="get">
-            <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ""}}" type="text" />
+            <input placeholder="Cari Artikel atau Produk" name="search"  value="{{request()->search ?? ""}}" type="text" />
             <button type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
@@ -34,7 +34,7 @@
                             </div>
                             <div class="text-holder">
                                 <h3><a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a></h3>
-                                <p>Jadikan lebih banyak ahli dengan</p>
+                                <p>{{$product->caption}}</p>
                                 <div class="btn-box">
                                     <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
                                     >Lihat Lebih Detail <span class="icon-right-arrow"></span

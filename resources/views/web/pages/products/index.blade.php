@@ -5,7 +5,7 @@
     <!-- Search Box Section -->
     <div class="sidebar-search-box">
         <form class="search-form container" action="{{route('web.search')}}" method="get">
-            <input placeholder="Cari Artikel" name="search"  value="{{request()->search ?? ""}}" type="text" />
+            <input placeholder="Cari Produk" name="search"  value="{{request()->search ?? ""}}" type="text" />
             <button type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>

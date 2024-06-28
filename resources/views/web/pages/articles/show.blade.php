@@ -40,12 +40,8 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="blog-details-content">
-                        <div class="single-blog-style1 single-blog-style1--instyle3">
+                        <div class="single-blog-style1 single-blog-style1--instyle3 overflow-hidden">
                             <div class="img-holder" style="width: 770px; height: 420px; background-image: url({{asset('storage/' . $article->thumbnail)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
-{{--                                <img--}}
-{{--                                    src="{{asset('storage/' . $article->thumbnail)}}"--}}
-{{--                                    alt=""--}}
-{{--                                />--}}
                                 <div class="date-box p-3">
                                     <h6>
                                         {{date('d M', strtotime($article->created_at))}}
@@ -127,39 +123,74 @@
                         </div>
                         <!-- Karoseri Section -->
                         <div class="row">
-                            <div class="col-sm-6">
-                                <div class="">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">AMBULANCE</h5>
-                                        <img src="assets/images/blog/blog-v1-4.jpg" alt="">
-                                        <br><br>
-                                        <div style="text-align: center">
-                                            <div class="btns-box mx-auto">
-                                                <a class="btn-one" href="all-product.html">
-                                                    <span class="txt">
-                                                        Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="single-sidebar-box col-sm-6">
+                                <div class="sidebar-title">
+                                    <h3>Produk Terbaik</h3>
+                                </div>
+                                <div class="sidebar-blog-post">
+                                    <ul class="blog-post">
+                                        @foreach($bestAmbulanceProducts as $productA)
+                                            <li>
+                                                <div class="inner">
+                                                    <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $productA->photo)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
+                                                        <div class="overlay-content">
+                                                            <a href="{{route('products.show', ['productCategory' => $productA->product_category_id, 'product' => $productA->id])}}"
+                                                            ><i
+                                                                    class="fa-solid fa-link"
+                                                                    aria-hidden="true"
+                                                                ></i
+                                                                ></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-box">
+                                                        <h4>
+                                                            <a href="{{route('products.show', ['productCategory' => $productA->product_category_id, 'product' => $productA->id])}}"
+                                                            >{{$productA->name}}</a
+                                                            >
+                                                        </h4>
+                                                        <div class="admin pt-2">
+                                                            <p>{{$productA->caption}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">NON AMBULANCE</h5>
-                                        <img src="assets/images/blog/blog-v1-4.jpg" alt="">
-                                        <br><br>
-                                        <div style="text-align: center">
-                                            <div class="btns-box mx-auto">
-                                                <a class="btn-one" href="non-ambulance-slide1.html">
-                                                    <span class="txt">Temukan Lebih Banyak<i class="icon-refresh arrow"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="single-sidebar-box col-sm-6">
+                                <div class="sidebar-title">
+                                    <h3>Non Ambulance</h3>
+                                </div>
+                                <div class="sidebar-blog-post">
+                                    <ul class="blog-post">
+                                        @foreach($bestNonAmbulaceProducts as $productNA)
+                                            <li>
+                                                <div class="inner">
+                                                    <div class="img-box" style="width: 70px; height: 70px; background-image: url({{asset('storage/' . $productNA->photo)}}); background-repeat: no-repeat; background-position: center; background-size: cover">
+                                                        <div class="overlay-content">
+                                                            <a href="{{route('products.show', ['productCategory' => $productNA->product_category_id, 'product' => $productNA->id])}}"
+                                                            ><i
+                                                                    class="fa-solid fa-link"
+                                                                    aria-hidden="true"
+                                                                ></i
+                                                                ></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-box">
+                                                        <h4>
+                                                            <a href="{{route('products.show', ['productCategory' => $productNA->product_category_id, 'product' => $productNA->id])}}"
+                                                            >{{$productNA->name}}</a
+                                                            >
+                                                        </h4>
+                                                        <div class="admin pt-2">
+                                                            <p>{{$productNA->caption}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
