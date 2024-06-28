@@ -126,7 +126,7 @@
                         </div>
                         <div class="text-holder">
                             <h3><a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}">{{$product->name}}</a></h3>
-                            <p>Jadikan lebih banyak ahli dengan</p>
+                            <p>{{$product->caption}}</p>
                             <div class="btn-box">
                                 <a href="{{route('products.show', ['productCategory' => $product->product_category_id, 'product' => $product->id])}}"
                                 >Lihat Lebih Detail <span class="icon-right-arrow"></span
