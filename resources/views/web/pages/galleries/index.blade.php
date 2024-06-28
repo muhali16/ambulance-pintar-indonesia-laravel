@@ -7,7 +7,7 @@
         <div
             class="breadcrumb-area-bg"
             style="
-            background-image: url({{asset('assets/images/breadcrumb/breadcrumb-2.jpg')}});
+            background-image: url({{asset('assets/images/resources/api3.webp')}});
           "
         ></div>
         <div class="container">
@@ -36,7 +36,7 @@
                 @forelse($photos as $photo)
                 <!-- Start Single Image Gallery -->
                 <div
-                    class="service-details__content p-2 m-0 col-xl-6 col-lg-6 col-md-6"
+                    class="service-details__content p-2 m-0 col-xl-4 col-lg-4 col-md-6"
                 >
                     <div class="img-box1">
                         <img src="{{asset('storage/' . $photo->content)}}" alt="{{$photo->caption}}" title="{{$photo->caption}}" />
